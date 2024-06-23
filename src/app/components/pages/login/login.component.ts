@@ -30,11 +30,8 @@ export class LoginComponent {
   ngOnInit() {
     if (this.Auth.isLoggedIn()) {
       this.router.navigateByUrl('inicio');
-      this.toaster.success('já estava logado');
-    } else {
-      this.toaster.error('Não estava logado');
+      this.toaster.success('Bem vindo de volta');
     }
-    this.Auth.login();
   }
 
   onSubmit(event: Event): void {
@@ -57,6 +54,7 @@ export class LoginComponent {
       const logginAllowed: boolean = res;
 
       if (logginAllowed) {
+        this.Auth.login();
         this.router.navigateByUrl('inicio');
       }
     });

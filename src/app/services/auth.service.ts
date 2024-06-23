@@ -10,18 +10,20 @@ export class AuthService {
 
   // Método para fazer login
   login(): void {
-    sessionStorage.setItem(this.loggedInKey, 'true');
+    localStorage.setItem(this.loggedInKey, 'true');
   }
 
   // Método para fazer logout
   logout(): void {
-    sessionStorage.removeItem(this.loggedInKey);
+    localStorage.removeItem(this.loggedInKey);
   }
 
   // Método para verificar se o usuário está logado
   isLoggedIn(): boolean {
-    return sessionStorage.getItem(this.loggedInKey) === 'true';
+    return localStorage.getItem(this.loggedInKey) === 'true';
   }
 
-  saveCurrentUser(): void {}
+  saveCurrentUser(): void {
+    // Método placeholder, você pode adicionar a lógica necessária aqui.
+  }
 }

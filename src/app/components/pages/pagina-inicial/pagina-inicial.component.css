@@ -6,6 +6,19 @@
 
 .conteudo-pagina-inicial {
   border: 1px solid red;
-  max-width: 80%;
-  margin: 0 60px 0 auto;
+  max-width: 95%;
+  margin: 0 auto;
+}
+
+.conteudo-container {
+  flex-grow: 1;
+}
+
+@media (min-width: 800px) {
+  .pagina-inicial {
+    border: 1px solid blue;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
 }
