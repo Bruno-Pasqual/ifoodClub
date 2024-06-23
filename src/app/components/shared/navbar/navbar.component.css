@@ -30,11 +30,22 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  row-gap: 6px;
+  row-gap: 10px;
 }
 
 .logo-container {
   display: none;
+}
+
+.icon-container.active > *:first-child {
+  outline: 1px solid black;
+  outline-offset: 5px;
+  border-radius: 50%;
+  background: rgba(255, 6, 6, 0.473);
+}
+
+.icon-container.active > *:last-child {
+  color: rgb(255, 6, 6);
 }
 
 @media (min-width: 800px) {

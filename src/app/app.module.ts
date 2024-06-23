@@ -5,8 +5,10 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/pages/login/login.component';
 import { LoginModule } from './login/login.module';
 import { PaginaInicialComponent } from './components/pages/pagina-inicial/pagina-inicial.component';
-import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { ToastrModule } from 'ngx-toastr';
+import { PedidosComponent } from './components/restaurante/pedidos/pedidos.component';
+import { ProdutosComponent } from './components/restaurante/produtos/produtos.component';
+import { NavbarComponent } from './components/shared/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +17,8 @@ import { ToastrModule } from 'ngx-toastr';
     PaginaInicialComponent,
     NavbarComponent,
     PaginaInicialComponent,
+    PedidosComponent,
+    ProdutosComponent,
   ],
   imports: [
     BrowserModule,
