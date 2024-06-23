@@ -1,0 +1,120 @@
+<section class="body">
+  <div class="container-login">
+    <img class="logo" src="/assets/imgs/logo.svg" alt="" />
+    <form [formGroup]="cadastroForm" (ngSubmit)="onSubmit($event)">
+      <h2>Vamos criar sua conta</h2>
+
+      <!-- Campo de Email -->
+      <div class="form-container">
+        <label for="email">Email</label>
+        <input
+          formControlName="email"
+          type="email"
+          placeholder="Ex: sara@gmail.com"
+        />
+      </div>
+
+      <!-- Campo de Senha -->
+      <div class="form-container">
+        <label for="password">Digite sua senha</label>
+        <input
+          formControlName="password"
+          type="password"
+          placeholder="Digite a sua senha"
+        />
+      </div>
+
+      <!-- Campo de Confirmação de Senha -->
+      <div class="form-container">
+        <label for="confirmPassword">Confirme a sua senha</label>
+        <input
+          formControlName="confirmPassword"
+          type="password"
+          placeholder="Digite a sua senha novamente"
+        />
+      </div>
+
+      <!-- Seleção de Tipo de Usuário -->
+      <div class="form-container">
+        <label for="tipoUsuario">Você quer se cadastrar como</label>
+        <div class="container-checkboxes">
+          <div>
+            <input
+              type="radio"
+              id="empresa-input"
+              value="empresa"
+              formControlName="tipoUsuario"
+              (change)="updateTipoCadastro('Empresa')"
+            />
+            <label for="empresa-input">Empresa</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              id="restaurante-input"
+              value="restaurante"
+              formControlName="tipoUsuario"
+              (change)="updateTipoCadastro('Restaurante')"
+            />
+            <label for="restaurante-input">Restaurante</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form Empresa/Restaurante -->
+      <div *ngIf="tipoCadastro != ''">
+        <div class="form-container">
+          <label for="nome">{{
+            tipoCadastro == "Empresa"
+              ? "Nome da empresa"
+              : "Nome do restaurante"
+          }}</label>
+          <input
+            formControlName="nome"
+            type="text"
+            placeholder="{{
+              tipoCadastro == 'Empresa'
+                ? 'Digite o nome da sua empresa'
+                : 'Digite o nome do seu restaurante'
+            }}"
+          />
+        </div>
+        <div class="form-container">
+          <label for="cnpj">CNPJ</label>
+          <input
+            formControlName="cnpj"
+            type="number"
+            placeholder="{{ 'Digite o CNPJ' }}"
+          />
+        </div>
+        <div class="form-container">
+          <label for="cnpj">CEP</label>
+          <input
+            formControlName="cep"
+            type="number"
+            placeholder="Digite o CEP"
+          />
+        </div>
+        <div class="form-container">
+          <label for="numero">Número</label>
+          <input formControlName="numero" type="number" placeholder="Número" />
+        </div>
+        <div class="form-container">
+          <label for="numero">Logo da empresa</label>
+          <input
+            formControlName="imagem"
+            type="text"
+            placeholder="Digite o endereço da imagem para o logo"
+          />
+        </div>
+      </div>
+
+      <!-- Botões de Ação -->
+      <button class="btn-entrar" type="submit">Cadastrar</button>
+      <button class="btn-cadastrar" type="button" [routerLink]="['/login']">
+        Retornar para o login
+      </button>
+      <p class="texto-esqueceu-senha">Esqueci a senha</p>
+    </form>
+  </div>
+</section>

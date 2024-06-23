@@ -1,0 +1,25 @@
+<article class="opinioes">
+    <h2>O que nossos usuários pensam:</h2>
+    <div class="carrossel"
+     (mousedown)="onDragStart($event)"
+     (mousemove)="onDragMove($event)"
+     (mouseup)="onDragEnd($event)"
+     (mouseleave)="onDragEnd($event)"
+     (touchstart)="onDragStart($event)"
+     (touchmove)="onDragMove($event)"
+     (touchend)="onDragEnd($event)">
+     
+  <div class="carrossel-item" *ngFor="let opiniao of opinioes; let i = index"
+       [ngClass]="{'active': i === currentIndex}">
+    <div class="foto-nome">
+      <img [src]="opiniao.imagem" alt="Foto da pessoa" class="foto-usuario">
+      <p>{{ opiniao.nome }}</p>
+    </div>
+    <div class="opiniao-texto">
+      <p>{{ opiniao.texto }}</p>
+    </div>
+  </div>
+</div>
+
+
+</article>

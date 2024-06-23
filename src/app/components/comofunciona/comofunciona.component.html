@@ -1,0 +1,18 @@
+<main>
+    <!-- Seção "Como Funciona?" -->
+    <section class="comoFunciona">
+      <!-- Fundo Vermelho -->
+      <img src="" alt="fundo vermelho">
+      <!-- Conteúdo Escrito -->
+      <div class="content">
+        <h2>COMO FUNCIONA?</h2>
+
+        <!-- Cards explicando como funciona -->
+        <div class="card-wrap">
+            <app-card-comofunciona *ngFor="let card of cards" [imagem]="card.imagem" [texto]="card.texto"></app-card-comofunciona>
+        </div>
+      </div>
+        
+    </section>
+    
+  </main>

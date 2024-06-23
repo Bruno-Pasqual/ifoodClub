@@ -1,0 +1,103 @@
+header {
+  display: flex;
+  flex-direction: column;
+  max-width: 1280px;
+  margin: 0 auto;
+  height: 100vh;
+  row-gap: 4rem;
+  padding: 4rem 0rem 0 0rem;
+}
+.barra-cima {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 55px;
+  background-color: #bb3301;
+}
+.logo-img {
+  width: 150px;
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+.texto-principal {
+  font-weight: 700;
+  font-size: xx-large;
+  line-height: 30px;
+  margin-bottom: 0.5rem;
+}
+
+.detalhes {
+  max-width: 450px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+}
+
+.texto-principal span {
+  color: #bb3301;
+}
+
+button {
+  width: 100%;
+  border: 1px solid red;
+  padding: 0.5rem 0;
+  border-radius: 8px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  color: #bb3301;
+}
+
+.btn-primary {
+  background: #bb3301;
+  color: white;
+  margin: 1rem 0;
+}
+.divisao {
+  border: none;
+}
+
+@media (min-width: 1180px) {
+  header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 2rem 2rem 0 2rem;
+  }
+  .barra-cima {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 55px;
+    background-color: #bb3301;
+  }
+
+  .logo-img {
+    margin: 0;
+    width: 250px;
+    max-width: 300px;
+  }
+  .detalhes {
+    padding: 1rem 1rem;
+  }
+
+  .container-botoes {
+    display: flex;
+    align-items: center;
+    column-gap: 2rem;
+  }
+
+  .btn-primary:hover {
+    background: white;
+    color: #bb3301;
+  }
+
+  .btn-secondary:hover {
+    background: #bb3301;
+    color: white;
+  }
+
+  button:hover {
+    transition: all 0.3s;
+    opacity: 0.7;
+  }
+}

@@ -1,0 +1,57 @@
+main{
+    margin: 15% 0%;
+    width: 100%;
+}
+.content h2{
+    color: #FFF;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.comoFunciona img{
+    content: url(../../../assets/imgs/bg-red.svg);
+    position: absolute;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+}
+.comoFunciona .content{
+    position: relative;
+    z-index: 2;
+    padding: 15% 5%;
+}
+.card-wrap{
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+@media (min-width: 375px) and (max-width: 500px){
+    .comoFunciona img{
+        content: url(../../../assets/imgs/bg-red-375.svg);
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+    }
+}
+@media (min-width: 500px) and (max-width: 768px){
+    .comoFunciona img{
+        content: url(../../../assets/imgs/bg-red-small.svg);
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+    }
+}
+@media (min-width: 1180px) {
+    .card-wrap{
+        justify-content: space-between;
+    }
+    .comoFunciona img{
+        
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+    }
+}

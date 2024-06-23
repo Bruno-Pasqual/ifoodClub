@@ -1,0 +1,29 @@
+<section>
+  <div class="container-login">
+    <img class="logo" src="/assets/imgs/logo.svg" alt="" />
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit($event)">
+      <h2>Seja bem vindo de volta</h2>
+      <div class="form-container">
+        <label for="email">Email</label>
+        <input
+          formControlName="email"
+          type="text"
+          placeholder="Digite o seu email"
+        />
+      </div>
+      <div class="form-container">
+        <label for="password">Senha</label>
+        <input
+          formControlName="password"
+          type="password"
+          placeholder="Digite a sua senha"
+        />
+      </div>
+      <button class="btn-entrar" type="submit">Entrar</button>
+      <button [routerLink]="['/cadastro']" class="btn-cadastrar" type="button">
+        Cadastrar
+      </button>
+      <p class="texto-esqueceu-senha">Esqueci a senha</p>
+    </form>
+  </div>
+</section>
