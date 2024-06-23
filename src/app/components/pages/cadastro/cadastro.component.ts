@@ -21,6 +21,7 @@ export class CadastroComponent {
   ) {
     this.cadastroForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
+      //todo - colocar criptografia de senha com o bycript
       password: ['', [Validators.required]],
       confirmPassword: ['', [Validators.required]],
       tipoUsuario: ['', [Validators.required]],
@@ -86,7 +87,7 @@ export class CadastroComponent {
     imagem: string,
     tipoUsuario: string
   ) {
-    console.log(tipoUsuario);
+    //todo - colocar criptografia de senha com o bycript antes de salvar no banco
 
     this.supaService
       .createCompany(nome, cnpj, cep, numero, id_usuario, imagem, tipoUsuario)

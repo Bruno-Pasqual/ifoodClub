@@ -22,6 +22,7 @@ export class SupabaseService {
   //#region "User Methods"
 
   fetchUsuarios(): Observable<User[]> {
+    //Lista todos os usuários
     return from(
       this.supabase
         .from('tusuario')
@@ -31,6 +32,7 @@ export class SupabaseService {
   }
 
   fetchUserByEmail(email: string): Observable<any> {
+    //Busca um usuário utilizando o email como parâmetro
     return from(
       this.supabase
         .from('tusuario')
@@ -48,6 +50,7 @@ export class SupabaseService {
   }
 
   createUser(
+    //Cria um novo usuário base
     email: string,
     password: string,
     tipoUsuario: string
@@ -78,7 +81,9 @@ export class SupabaseService {
     return this.fetchUserByEmail(email).pipe(
       map((res: any) => {
         if (res != null) {
+          //todo - colocar criptografia de senha com o bycript ()
           return res.senha_usuario === password;
+          //Salvar usuário
         }
         return false;
       })
@@ -90,6 +95,7 @@ export class SupabaseService {
   //#region Empresa
 
   createCompany(
+    //Cria um novo usuário especializado
     nome: string,
     cnpj: string,
     cep: string,

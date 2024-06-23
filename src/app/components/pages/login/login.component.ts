@@ -4,6 +4,7 @@ import { SupabaseService } from '../../../services/supabase.service';
 import { RouterLink } from '@angular/router';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { AuthService } from '../../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,8 @@ export class LoginComponent {
   constructor(
     private fb: FormBuilder,
     private supaService: SupabaseService,
-    private router: Router
+    private router: Router,
+    private Auth: AuthService
   ) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
@@ -26,10 +28,13 @@ export class LoginComponent {
   }
 
   ngOnInit() {
-    // this.checkInputs();
-    this.supaService.fetchUsuarios().subscribe((res) => {
-      // console.log(res);
-    });
+    if (this.Auth.isLoggedIn()) {
+      this.router.navigateByUrl('inicio');
+      this.toaster.success('já estava logado');
+    } else {
+      this.toaster.error('Não estava logado');
+    }
+    this.Auth.login();
   }
 
   onSubmit(event: Event): void {

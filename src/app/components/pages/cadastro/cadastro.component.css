@@ -10,7 +10,7 @@
   padding: 2rem 0;
   width: 95%;
   max-width: 400px;
-  margin: auto;
+  margin: 2rem auto 0 auto;
   border: 1px solid rgba(128, 128, 128, 0.13);
 }
 
@@ -92,6 +92,11 @@ button {
 }
 
 @media (min-width: 1100px) {
+  #restaurante-input,
+  #empresa-input {
+    cursor: pointer;
+  }
+
   .container-login {
     flex-direction: row-reverse;
     justify-content: space-around;
