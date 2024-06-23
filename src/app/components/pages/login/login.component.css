@@ -8,11 +8,9 @@
   justify-content: center;
   padding: 2rem 0;
   width: 95%;
+  height: 90vh;
   max-width: 400px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  margin: 0 auto;
 }
 
 form {
@@ -24,9 +22,9 @@ form {
 }
 
 h2 {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   font-weight: 600;
-  text-align: center;
+  text-align: left;
 }
 
 .form-container {
@@ -35,18 +33,22 @@ h2 {
   margin-bottom: 0.5rem;
 }
 
+label {
+  margin-bottom: 0.5rem;
+}
+
 input {
   border: 1px solid lightgrey;
   border-radius: 4px;
-  padding: 0.25rem 0.5rem;
+  padding: 0.6rem 0.5rem;
 }
 
 button {
   font-weight: 600;
   letter-spacing: 1px;
-  padding: 0.5rem 0;
-
+  padding: 0.8rem 0;
   border-radius: 8px;
+  font-size: 1rem;
 }
 
 .texto-esqueceu-senha {
@@ -72,6 +74,7 @@ button {
 .btn-cadastrar {
   border: 1px solid #bb3301;
   margin-top: 0.5rem;
+  color: #bb3301;
 }
 
 @media (min-width: 1100px) {
@@ -81,6 +84,14 @@ button {
 
     max-width: 1000px;
     height: 600px;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  button:hover {
+    opacity: 0.9;
   }
 
   form {
@@ -98,6 +109,7 @@ button {
 
   .btn-cadastrar {
     margin-top: 0.5rem;
+    background: white;
   }
 
   .btn-entrar {

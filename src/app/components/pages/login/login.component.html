@@ -19,8 +19,12 @@
           placeholder="Digite a sua senha"
         />
       </div>
-      <button class="btn-entrar" type="submit">Entrar</button>
-      <button [routerLink]="['/cadastro']" class="btn-cadastrar" type="button">
+      <button class="btn-entrar primary" type="submit">Entrar</button>
+      <button
+        [routerLink]="['/cadastro']"
+        class="btn-cadastrar secondary"
+        type="button"
+      >
         Cadastrar
       </button>
       <p class="texto-esqueceu-senha">Esqueci a senha</p>

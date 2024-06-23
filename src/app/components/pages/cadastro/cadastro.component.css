@@ -10,10 +10,11 @@
   padding: 2rem 0;
   width: 95%;
   max-width: 400px;
-  position: absolute;
+  margin: auto;
+  /* position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
 }
 
 form {
@@ -33,21 +34,25 @@ h2 {
 .form-container {
   display: flex;
   flex-direction: column;
+  margin-bottom: 0.9rem;
+}
+
+label {
   margin-bottom: 0.5rem;
 }
 
 input {
   border: 1px solid lightgrey;
   border-radius: 4px;
-  padding: 0.25rem 0.5rem;
+  padding: 0.6rem 0.5rem;
 }
 
 button {
   font-weight: 600;
   letter-spacing: 1px;
-  padding: 0.5rem 0;
-
+  padding: 0.8rem 0;
   border-radius: 8px;
+  font-size: 1rem;
 }
 
 .texto-esqueceu-senha {
@@ -73,14 +78,19 @@ button {
 .btn-cadastrar {
   border: 1px solid #bb3301;
   margin-top: 0.5rem;
+  background: white;
+  color: #bb3301;
 }
-
-.container-checkboxes {
+.question-radio {
+  margin: 1rem 0;
+}
+.container-radio {
   display: flex;
   column-gap: 1.5rem;
+  margin-bottom: 1rem;
 }
 
-.container-checkboxes input {
+.container-radio input {
   margin-right: 0.5rem;
 }
 
@@ -89,6 +99,14 @@ button {
     flex-direction: row-reverse;
     justify-content: space-around;
     max-width: 1000px;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  button:hover {
+    opacity: 0.9;
   }
 
   form {
