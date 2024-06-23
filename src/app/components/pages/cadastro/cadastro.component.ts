@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SupabaseService } from '../../../services/supabase.service';
+import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastro',
@@ -10,8 +12,13 @@ import { SupabaseService } from '../../../services/supabase.service';
 export class CadastroComponent {
   cadastroForm: FormGroup;
   tipoCadastro: string = '';
+  toaster = inject(ToastrService);
 
-  constructor(private fb: FormBuilder, private supaService: SupabaseService) {
+  constructor(
+    private fb: FormBuilder,
+    private supaService: SupabaseService,
+    private router: Router
+  ) {
     this.cadastroForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]],
@@ -26,6 +33,8 @@ export class CadastroComponent {
       // Restaurante
     });
   }
+
+  ngOnInit() {}
 
   onSubmit(event: Event): void {
     event.preventDefault();
@@ -42,7 +51,10 @@ export class CadastroComponent {
     } = this.cadastroForm.value;
 
     if (this.cadastroForm.invalid || password != confirmPassword) {
-      alert('Algo deu errado, verifique os campos e tente novamente');
+      this.toaster.error(
+        'Algo deu errado com os inputs, verifique-os e tente novamente',
+        'Falha nos campos'
+      );
     } else {
       this.supaService
         .createUser(email, password, tipoUsuario)
@@ -79,7 +91,12 @@ export class CadastroComponent {
     this.supaService
       .createCompany(nome, cnpj, cep, numero, id_usuario, imagem, tipoUsuario)
       .subscribe((res) => {
-        console.log(res);
+        const stringToast: string = (tipoUsuario = 'restaurante'
+          ? 'Restaurante cadastrado com sucessos'
+          : 'A empresa foi cadastrada com sucesso');
+
+        this.toaster.success(stringToast, 'Cadastrado realizado');
+        this.router.navigateByUrl('/login');
       });
   }
 }

@@ -6,10 +6,22 @@ import { LoginComponent } from './components/pages/login/login.component';
 import { LoginModule } from './login/login.module';
 import { PaginaInicialComponent } from './components/pages/pagina-inicial/pagina-inicial.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
-  declarations: [AppComponent, PaginaInicialComponent, PaginaInicialComponent, NavbarComponent, PaginaInicialComponent],
-  imports: [BrowserModule, AppRoutingModule, LoginModule],
+  declarations: [
+    AppComponent,
+    PaginaInicialComponent,
+    PaginaInicialComponent,
+    NavbarComponent,
+    PaginaInicialComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    LoginModule,
+    ToastrModule.forRoot(),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

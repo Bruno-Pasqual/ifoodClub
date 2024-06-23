@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { SupabaseService } from '../../../services/supabase.service';
 import { RouterLink } from '@angular/router';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -11,6 +12,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
   loginForm: FormGroup;
+  toaster = inject(ToastrService);
 
   constructor(
     private fb: FormBuilder,
@@ -38,7 +40,10 @@ export class LoginComponent {
       const { email, password } = this.loginForm.value;
       this.checkInputs(email, password);
     } else {
-      alert('Verifique os campos email e senha');
+      this.toaster.error(
+        'Email ou senha estão incorretos',
+        'Falha ao realizar login'
+      );
     }
   }
 
