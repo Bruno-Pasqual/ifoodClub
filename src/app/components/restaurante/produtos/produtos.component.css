@@ -53,6 +53,14 @@
   color: white;
 }
 
+.container-aviso-sem-pedido p {
+  text-align: center;
+  margin-top: 1rem;
+  background: #bb3301;
+  color: white;
+  padding: 0.5rem;
+}
+
 @media (min-width: 800px) {
   .btn-novo-produto:hover {
     cursor: pointer;

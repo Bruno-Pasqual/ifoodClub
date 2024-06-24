@@ -1,4 +1,11 @@
-import { Component, EventEmitter, Output, HostListener } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Output,
+  HostListener,
+  input,
+  Input,
+} from '@angular/core';
 
 @Component({
   selector: 'app-modal',
@@ -10,6 +17,8 @@ export class ModalComponent {
 
   @Output() onConfirm = new EventEmitter<void>();
   @Output() onCancel = new EventEmitter<void>();
+  @Input()
+  titulo!: string;
 
   showModal() {
     this.isVisible = true;

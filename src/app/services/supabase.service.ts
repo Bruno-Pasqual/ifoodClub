@@ -44,6 +44,26 @@ export class SupabaseService {
     );
   }
 
+  async setDisponibilidadeProduto(
+    produto: Produto,
+    estadoProduto: boolean
+  ): Promise<any> {
+    const { data, error } = await this.supabase
+      .from('tproduto')
+      .update({ habilitado: estadoProduto })
+      .eq('id', produto.id)
+      .select();
+
+    if (error) {
+      this.toaster.error(
+        'Ocorreu um erro ao atualizar a disponibilidade do produto'
+      );
+    } else {
+      const acao = estadoProduto ? 'habilitado' : 'desabilitado';
+      this.toaster.success(`O produto foi ${acao} com sucesso`);
+    }
+  }
+
   //#endregion
 
   //#region "User Methods"

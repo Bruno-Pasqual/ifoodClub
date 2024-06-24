@@ -80,9 +80,14 @@
     </button>
   </div>
 
-  <app-modal #modal (onConfirm)="handleConfirm()" (onCancel)="handleCancel()">
+  <app-modal
+    #modal
+    (onConfirm)="handleConfirm(produto, false)"
+    (onCancel)="handleCancel()"
+    titulo="Remover produto"
+  >
     <p>
-      Você tem certeza que deseja remover "{{ produto.nome }}" da lista de
+      Você tem certeza que deseja remover {{ produto.nome }} da sua lista de
       produtos disponíveis?
     </p>
   </app-modal>

@@ -5,4 +5,5 @@ export interface Produto {
   preco: number;
   id_restaurante: number;
   image: string;
+  habilitado: boolean;
 }

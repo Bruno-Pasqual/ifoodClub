@@ -6,15 +6,31 @@
   <div class="cabecalho-wrapper">
     <div class="produto-cabecalho">
       <p>Cadastrados</p>
-      <p class="quantidade-cadastrados">7 produtos</p>
+      <p class="quantidade-cadastrados">
+        {{ quantidadeProdutosHabilitados }}
+        {{ quantidadeProdutosHabilitados > 1 ? "produtos" : "produto" }}
+      </p>
     </div>
     <p>
       <button class="btn-novo-produto">Adicionar produto</button>
     </p>
   </div>
-  <ul class="lista-produtos">
+  <div
+    class="container-aviso-sem-pedido"
+    *ngIf="quantidadeProdutosHabilitados == 0"
+  >
+    <img src="../../../../assets/imgs/chef-image.svg" alt="" />
+    <p class="">
+      Você não tem produtos cadastrados, gostaria de castrar seu primeiro?
+    </p>
+  </div>
+
+  <ul *ngIf="arrayProdutos.length >= 1" class="lista-produtos">
     <li *ngFor="let produto of arrayProdutos">
-      <app-product-card [produto]="produto"></app-product-card>
+      <app-product-card
+        *ngIf="produto.habilitado"
+        [produto]="produto"
+      ></app-product-card>
     </li>
   </ul>
 </div>

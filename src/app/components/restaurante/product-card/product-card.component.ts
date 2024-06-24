@@ -1,6 +1,7 @@
 import { Component, Input, ViewChild } from '@angular/core';
 import { ModalComponent } from '../../shared/modal/modal.component';
 import { Produto } from '../../../models/Produto';
+import { SupabaseService } from '../../../services/supabase.service';
 
 @Component({
   selector: 'app-product-card',
@@ -11,12 +12,14 @@ export class ProductCardComponent {
   @Input() produto!: Produto;
   @ViewChild('modal') modal!: ModalComponent;
 
+  constructor(private supabase: SupabaseService) {}
+
   openModal() {
     this.modal.showModal();
   }
 
-  handleConfirm() {
-    console.log('Confirmed!');
+  handleConfirm(produto: Produto, estadoProduto: boolean) {
+    this.supabase.setDisponibilidadeProduto(produto, estadoProduto);
   }
 
   handleCancel() {
