@@ -3,7 +3,7 @@
     <div class="conteudo-pagina-inicial">
       <!-- <h2>{{ currentPage }}</h2> -->
       <app-pedidos *ngIf="currentPage == 'pedidos'"></app-pedidos>
-      <app-produtos></app-produtos>
+      <app-produtos *ngIf="currentPage === 'produtos'"></app-produtos>
     </div>
   </div>
 

@@ -45,7 +45,9 @@ export default class ProdutosComponent {
   atualizaProdutos() {
     this.supabase.getProductsFromRestaurante().subscribe((res) => {
       if (res != null) {
-        this.arrayProdutos = res;
+        this.arrayProdutos = res.filter((product) => {
+          return product.habilitado === true;
+        });
         this.quantidadeProdutosHabilitados =
           this.ps.getQuantidadeProdutosValidos(this.arrayProdutos);
       }
