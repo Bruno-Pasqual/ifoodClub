@@ -1,11 +1,13 @@
 <div class="product-card-container">
-  <!-- <div class="imagem-pedido"></div>
+  <!-- <div class="imagem-pedido"> -->
+  <img class="imagem-pedido" src="{{ produto.image }}" alt="" />
+  <!-- </div> -->
   <div class="co-detalhes-pedido">
-    <p class="nome-prato">Frango a milanesa</p>
-    <p>Delicioso frango a milanesa</p>
+    <p class="nome-prato">{{ produto.nome }}</p>
+    <p>{{ produto.descricao }}</p>
   </div>
   <div class="co-preco-container">
-    <p>R$ 40.50</p>
+    <p>R$ {{ produto.preco }}</p>
     <p></p>
   </div>
   <div class="co-botoes-pedido">
@@ -39,7 +41,7 @@
         </g>
       </svg>
     </button>
-    <button>
+    <button (click)="openModal()">
       <svg
         width="16px"
         height="16px"
@@ -76,13 +78,12 @@
         </g>
       </svg>
     </button>
-  </div> -->
-  <button (click)="openModal()">Open Modal</button>
+  </div>
 
   <app-modal #modal (onConfirm)="handleConfirm()" (onCancel)="handleCancel()">
     <p>
-      Você tem certeza que deseja remover o produto da lista de produtos
-      disponiveis ?
+      Você tem certeza que deseja remover "{{ produto.nome }}" da lista de
+      produtos disponíveis?
     </p>
   </app-modal>
 </div>

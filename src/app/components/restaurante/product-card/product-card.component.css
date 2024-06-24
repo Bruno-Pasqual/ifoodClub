@@ -10,10 +10,9 @@
 .imagem-pedido {
   height: 40px;
   width: 40px;
-  border: 1px solid black;
-  background-image: url("https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
   background-size: cover;
   border-radius: 8px;
+  object-fit: cover;
 }
 
 .co-detalhes-pedido p {

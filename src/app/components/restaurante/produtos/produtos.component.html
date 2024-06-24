@@ -13,35 +13,8 @@
     </p>
   </div>
   <ul class="lista-produtos">
-    <li>
-      <app-product-card></app-product-card>
-    </li>
-    <li>
-      <app-product-card></app-product-card>
-    </li>
-    <li>
-      <app-product-card></app-product-card>
-    </li>
-    <li>
-      <app-product-card></app-product-card>
-    </li>
-    <li>
-      <app-product-card></app-product-card>
-    </li>
-    <li>
-      <app-product-card></app-product-card>
-    </li>
-    <li>
-      <app-product-card></app-product-card>
-    </li>
-    <li>
-      <app-product-card></app-product-card>
-    </li>
-    <li>
-      <app-product-card></app-product-card>
-    </li>
-    <li>
-      <app-product-card></app-product-card>
+    <li *ngFor="let produto of arrayProdutos">
+      <app-product-card [produto]="produto"></app-product-card>
     </li>
   </ul>
 </div>

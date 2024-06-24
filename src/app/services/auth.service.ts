@@ -44,11 +44,8 @@ export class AuthService {
     this.login();
   }
 
-  getCurrentUser(): CurrentUser | null {
+  getCurrentUser(): CurrentUser {
     const currentUserString = localStorage.getItem('currentUser');
-    if (currentUserString) {
-      return JSON.parse(currentUserString) as CurrentUser;
-    }
-    return null;
+    return JSON.parse(currentUserString!) as CurrentUser;
   }
 }

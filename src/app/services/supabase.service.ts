@@ -1,3 +1,4 @@
+import { CurrentUser } from './../models/CurrentUser';
 import { inject, Injectable } from '@angular/core';
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
 import { Observable, from } from 'rxjs';
@@ -7,6 +8,7 @@ import { AuthService } from './auth.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { UserDetails } from '../models/UserDetails';
+import { Produto } from '../models/Produto';
 
 @Injectable({
   providedIn: 'root',
@@ -21,6 +23,28 @@ export class SupabaseService {
   constructor(private auth: AuthService, private router: Router) {
     this.supabase = createClient(this.supabaseUrl, this.supabaseKey);
   }
+
+  //#region "Produtos"
+
+  getProductsFromRestaurante(): Observable<Produto[] | null> {
+    const currentUser: CurrentUser | null = this.auth.getCurrentUser();
+    if (!currentUser) {
+      // Handle the case where currentUser is null or undefined
+      this.toaster.error('Usuário não autenticado', 'Erro de usuário');
+    }
+
+    const { id_restaurante } = currentUser;
+
+    return from(
+      this.supabase
+        .from('tproduto')
+        .select('*')
+        .eq('id_restaurante', id_restaurante)
+        .then((res) => res.data)
+    );
+  }
+
+  //#endregion
 
   //#region "User Methods"
 
