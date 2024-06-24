@@ -3,7 +3,8 @@
     <h2 class="page-title">Produtos</h2>
     <p class="page-description">Gerencie seus produtos</p>
   </div>
-  <div class="cabecalho-wrapper">
+
+  <div class="cabecalho-wrapper" *ngIf="quantidadeProdutosHabilitados >= 1">
     <div class="produto-cabecalho">
       <p>Cadastrados</p>
       <p class="quantidade-cadastrados">
@@ -15,14 +16,20 @@
       <button class="btn-novo-produto">Adicionar produto</button>
     </p>
   </div>
+
   <div
     class="container-aviso-sem-pedido"
-    *ngIf="quantidadeProdutosHabilitados == 0"
+    *ngIf="quantidadeProdutosHabilitados === 0"
   >
     <img src="../../../../assets/imgs/chef-image.svg" alt="" />
-    <p class="">
-      Você não tem produtos cadastrados, gostaria de castrar seu primeiro?
-    </p>
+    <div class="wrapper">
+      <p class="">
+        Você não tem produtos cadastrados, gostaria de cadastrar o primeiro?
+      </p>
+      <button class="btn-cadastrar-produto" (click)="openModal()">
+        Cadastrar primeiro produto
+      </button>
+    </div>
   </div>
 
   <ul *ngIf="arrayProdutos.length >= 1" class="lista-produtos">
@@ -33,4 +40,46 @@
       ></app-product-card>
     </li>
   </ul>
+
+  <app-modal
+    #modal
+    (onConfirm)="onSubmit()"
+    (onCancel)="handleCancel()"
+    titulo="Cadastrar produto"
+  >
+    <form [formGroup]="cadastroForm">
+      <div class="form-container">
+        <label for="nome">Nome produto</label>
+        <input
+          formControlName="nomeProduto"
+          type="text"
+          placeholder="Digite o nome do produto"
+        />
+      </div>
+      <div class="form-container">
+        <label for="descricao">Descrição</label>
+        <input
+          formControlName="descricao"
+          type="text"
+          placeholder="Digite a descrição do produto"
+        />
+      </div>
+      <div class="form-container">
+        <label for="preco">Preço</label>
+        <input
+          formControlName="preco"
+          type="number"
+          placeholder="Digite o preço do produto"
+        />
+      </div>
+      <div class="form-container">
+        <label for="imagem-produto">Endereço da imagem</label>
+        <input
+          formControlName="enderecoImagem"
+          type="text"
+          placeholder="Digite a imagem do produto"
+        />
+      </div>
+    </form>
+  </app-modal>
 </div>

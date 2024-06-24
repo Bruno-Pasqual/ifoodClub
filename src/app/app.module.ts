@@ -12,6 +12,7 @@ import ProdutosComponent from './components/restaurante/produtos/produtos.compon
 import { ProductCardComponent } from './components/restaurante/product-card/product-card.component';
 import { ModalComponent } from './components/shared/modal/modal.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    LoginModule,
+    ReactiveFormsModule,
+
     ToastrModule.forRoot(),
   ],
   providers: [],

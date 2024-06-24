@@ -1,7 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { SupabaseService } from '../../../services/supabase.service';
-import { RouterLink } from '@angular/router';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from '../../../services/auth.service';
@@ -19,7 +18,8 @@ export class LoginComponent {
     private fb: FormBuilder,
     private supaService: SupabaseService,
     private router: Router,
-    private Auth: AuthService
+    private Auth: AuthService,
+    private toastr: ToastrService // Corrigido: Injetar o ToastrService aqui
   ) {
     this.loginForm = this.fb.group({
       email: ['donaJoana@gmail.com', [Validators.required, Validators.email]],
@@ -31,16 +31,12 @@ export class LoginComponent {
     this.Auth.isLoggedIn();
   }
 
-  onSubmit(event: Event): void {
-    event.preventDefault(); // Evita o comportamento padrão de envio do formulário
-    alert('entrei');
-
-    // this.checkInputs()
+  onSubmit(): void {
     if (this.loginForm.valid) {
       const { email, password } = this.loginForm.value;
       this.supaService.checkLogin(email, password);
     } else {
-      this.toaster.error(
+      this.toastr.error(
         'Email ou senha estão incorretos',
         'Falha ao realizar login'
       );

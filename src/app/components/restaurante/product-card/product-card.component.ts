@@ -20,6 +20,7 @@ export class ProductCardComponent {
 
   handleConfirm(produto: Produto, estadoProduto: boolean) {
     this.supabase.setDisponibilidadeProduto(produto, estadoProduto);
+    this.modal.closeModal();
   }
 
   handleCancel() {

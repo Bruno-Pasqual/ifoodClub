@@ -24,11 +24,7 @@ import { FooterComponent } from '../components/footer/footer.component';
     FooterComponent,
     GenericInputComponent,
   ],
-  imports: [
-    CommonModule,
-    RouterModule,
-    ReactiveFormsModule, // Importando ReactiveFormsModule
-  ],
+  imports: [CommonModule, RouterModule, ReactiveFormsModule],
   exports: [HeaderComponent],
 })
 export class LoginModule {}
