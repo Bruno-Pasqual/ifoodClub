@@ -1,17 +1,14 @@
 .pagina-inicial {
-  background: white;
   border-radius: 8px;
-  min-height: 100vh;
 }
 
 .conteudo-pagina-inicial {
-  border: 1px solid red;
-  max-width: 95%;
-  margin: 0 auto;
+  margin: 2rem auto 0 auto;
 }
 
 .conteudo-container {
   flex-grow: 1;
+  padding: 0 1rem;
 }
 
 @media (min-width: 800px) {
@@ -20,5 +17,12 @@
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
+    height: auto;
+  }
+
+  .conteudo-pagina-inicial {
+    max-width: 1440px;
+    margin: 6rem auto 0 auto;
+    /* margin: 5rem auto 0 auto; */
   }
 }

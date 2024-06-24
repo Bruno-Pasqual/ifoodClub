@@ -1,0 +1,61 @@
+.pagina-produtos {
+  padding: 1rem;
+  border: 1px solid rgb(236, 236, 236);
+  background: white;
+  border-radius: 8px;
+  margin-bottom: 6rem;
+}
+
+.page-description {
+  margin-top: 0.2rem;
+  font-size: 14px;
+  opacity: 0.4;
+}
+
+.page-title {
+  color: #bb3301;
+}
+
+.lista-produtos {
+  margin-top: 0.8rem;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+}
+
+.cabecalho-lista {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.cabecalho-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1.2rem 0 3rem 0;
+}
+
+.quantidade-cadastrados {
+  font-size: 0.8rem;
+  opacity: 0.5;
+  margin-top: 0.2rem;
+}
+
+.btn-novo-produto {
+  font-size: 1;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: none;
+  box-shadow: 2px 1px 3px rgba(0, 0, 0, 0.322);
+  background: #bb3301;
+  color: white;
+}
+
+@media (min-width: 800px) {
+  .btn-novo-produto:hover {
+    cursor: pointer;
+    opacity: 0.9;
+  }
+}

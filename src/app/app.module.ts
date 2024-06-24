@@ -7,8 +7,9 @@ import { LoginModule } from './login/login.module';
 import { PaginaInicialComponent } from './components/pages/pagina-inicial/pagina-inicial.component';
 import { ToastrModule } from 'ngx-toastr';
 import { PedidosComponent } from './components/restaurante/pedidos/pedidos.component';
-import { ProdutosComponent } from './components/restaurante/produtos/produtos.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
+import { ProdutosComponent } from './components/restaurante/produtos/produtos.component';
+import { ProductCardComponent } from './components/restaurante/product-card/product-card.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
     PaginaInicialComponent,
     PedidosComponent,
     ProdutosComponent,
+    ProductCardComponent,
   ],
   imports: [
     BrowserModule,

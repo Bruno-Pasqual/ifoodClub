@@ -1,0 +1,52 @@
+.product-card-container {
+  border: 1px solid rgba(128, 128, 128, 0.103);
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 8px;
+}
+
+.imagem-pedido {
+  height: 40px;
+  width: 40px;
+  border: 1px solid black;
+  background-image: url("https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  background-size: cover;
+  border-radius: 8px;
+}
+
+.co-detalhes-pedido p {
+  font-size: 0.7rem;
+}
+
+.co-detalhes-pedido .nome-prato {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.co-preco-container {
+  font-size: 0.8rem;
+}
+
+.co-botoes-pedido {
+  display: flex;
+  column-gap: 0.3rem;
+}
+
+.co-botoes-pedido button {
+  background: none;
+  border: none;
+  display: grid;
+  place-content: center;
+  border-radius: 8px;
+}
+
+.co-botoes-pedido button:last-child {
+  background: none;
+  border: none;
+  color: #ff0000;
+  background: #ff000033;
+  width: 20px;
+  height: 20px;
+}

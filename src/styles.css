@@ -10,7 +10,8 @@
 
 body {
   position: relative;
-  background: #f8f8f8;
+  /* background: #f8f8f8; */
+  background: rgb(255, 251, 247);
 }
 
 .toast-title {
