@@ -1,8 +1,8 @@
 .opinioes{
     display: flex;
     flex-direction: column;
-    position: absolute;
-    z-index: 2;
+    position: relative;
+    z-index: 3;
     width: 100%;
     padding-bottom: 5%;
 }
@@ -28,7 +28,7 @@
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* IE10+/Edge */
     user-select: none; /* Standard syntax */
-    
+
 }
 .carrossel-item{
     display: flex;
@@ -83,7 +83,7 @@
         margin-top: 22%;
         height: 13rem;
         color: #fff;
-   } 
+   }
    .carrossel-item{
         transform: translateX(calc(-100% * var(--index)));
         width: 355.612px;
@@ -115,8 +115,18 @@
         -moz-user-select: none; /* Firefox */
         -ms-user-select: none; /* IE10+/Edge */
         user-select: none; /* Standard syntax */
-        
+
     }
+}
+@media (min-width: 768px) and (max-width:1179px){
+  .opinioes{
+    position: relative;
+    padding: 5% 0%;
+  }
+  .carrossel{
+    position: relative;
+    margin-top: 5%;
+  }
 }
 
 @media (min-width: 1180px) {

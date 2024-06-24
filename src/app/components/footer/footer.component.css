@@ -1,8 +1,8 @@
 footer{
     background-color: #BB3301;
-    height: 20rem;
+    height: 15rem;
     width: 100%;
-    position: absolute;
+    position: relative;
     z-index: 2;
     margin-top: 40%;
     padding: 5% 10% 2% 10%;
@@ -12,7 +12,7 @@ footer .footer-content{
     display: flex;
     align-items: flex-start;
     width: 100%;
-    
+
 }
 .footer-content .logo-text{
     display: flex;
@@ -22,7 +22,7 @@ footer .footer-content{
 }
 .footer-content .logo-text p{
     width: 80%;
-    
+
 }
 .footer-content .logo-text img{
     width: 1.5rem;
@@ -42,7 +42,8 @@ p{
 .contact-icons{
     display: flex;
     flex-wrap: wrap;
-    width: 49%;
+
+
 }
 .contact-icons .contact{
     width: 10rem;
@@ -51,8 +52,13 @@ p{
     display: flex;
     flex-direction: column;
     width: 10rem;
-    justify-content: space-between;
+    height: 5rem;
+    gap: 15%;
+    justify-content: flex-start;
     align-items: center;
+}
+.follow h4{
+  letter-spacing: 1px;
 }
 
 .contact-icons .icons{
@@ -65,7 +71,7 @@ p{
         background-color: #BB3301;
         height: fit-content;
         width: 100%;
-        position: absolute;
+        position: relative;
         margin-top: 80%;
         z-index: 2;
         padding: 2% 1% 2% 1%;
@@ -85,13 +91,16 @@ p{
     .contact h4{
         font-size: 20px;
     }
+    .contact-icons{
+      width: min-content;
+    }
 }
 @media (min-width:500px) and (max-width:767px){
     footer{
         background-color: #BB3301;
-        height: 20rem;
+        height: 12rem;
         width: 100%;
-        position: absolute;
+        position: relative;
         z-index: 2;
         margin-top: 80%;
         bottom: 0;
@@ -114,6 +123,6 @@ p{
         flex-direction: column;
         align-items: center;
     }
-    
-    
+
+
 }
