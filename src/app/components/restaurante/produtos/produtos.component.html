@@ -37,6 +37,7 @@
       <app-product-card
         *ngIf="produto.habilitado"
         [produto]="produto"
+        (produtoExcluido)="atualizaProdutos()"
       ></app-product-card>
     </li>
   </ul>

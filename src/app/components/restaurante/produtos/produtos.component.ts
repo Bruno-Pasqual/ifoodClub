@@ -24,7 +24,7 @@ export default class ProdutosComponent {
     private supabase: SupabaseService,
     private auth: AuthService,
     private fb: FormBuilder,
-    private ps: ProdutoService // Injetando ProdutoService corretamente
+    private ps: ProdutoService
   ) {
     this.cadastroForm = this.fb.group({
       nomeProduto: ['', Validators.required],
@@ -79,18 +79,16 @@ export default class ProdutosComponent {
         habilitado: true,
       };
 
-      this.supabase.createNewProduct(newProduto).then((produtoInserido) => {
-        if (produtoInserido) {
-          this.arrayProdutos.push(produtoInserido);
-          this.atualizaProdutos();
+      this.supabase.createProduto(newProduto).subscribe({
+        next: (data) => {
+          console.log('Produto criado com sucesso:', data);
           this.modal.closeModal();
-        }
+          this.atualizaProdutos();
+        },
+        error: (err) => {
+          console.error('Erro ao criar produto:', err);
+        },
       });
-    } else {
-      this.toaster.error(
-        'O registro falhou, certifique-se de que todos campos estão preenchidos corretamente e tente novamente',
-        'Erro ao registrar'
-      );
     }
   }
 }

@@ -26,37 +26,36 @@ export class SupabaseService {
 
   //#region "Produtos"
 
-  async createNewProduct(produto: Produto): Promise<Produto | null> {
-    const { data, error } = await this.supabase
-      .from('tproduto')
+  //
+  createProduto(produto: Produto): Observable<any> {
+    const createUserPromise = this.supabase
+      .from(`tproduto`)
       .insert([
         {
           nome: produto.nome,
           descricao: produto.descricao,
           preco: produto.preco,
-          image: produto.image,
           id_restaurante: produto.id_restaurante,
-          habilitado: produto.habilitado,
+          image: produto.image,
+          habilitado: true,
         },
       ])
-      .single();
+      .select();
 
-    if (error) {
-      console.error('Erro ao cadastrar o produto:', error);
-      this.toaster.error(
-        'Ocorreu um erro ao cadastrar o produto',
-        'Erro de servidor'
-      );
-      return null;
-    }
+    return from(createUserPromise).pipe(
+      map(({ data, error }) => {
+        if (error) {
+          this.toaster.error('Alguma coisa deu errado');
 
-    if (data) {
-      this.toaster.success('O produto foi cadastrado com sucesso', 'Sucesso');
-      return data[0];
-    }
-
-    return null;
+          console.error('Error creating company:', error);
+          throw new Error(error.message);
+        }
+        this.toaster.success('O produto foi criado');
+        return data;
+      })
+    );
   }
+
   getProductsFromRestaurante(): Observable<Produto[] | null> {
     const currentUser: CurrentUser | null = this.auth.getCurrentUser();
     if (!currentUser) {
