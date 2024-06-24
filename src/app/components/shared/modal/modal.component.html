@@ -1,0 +1,10 @@
+<div class="modal" *ngIf="isVisible" (click)="onOverlayClick($event)">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <h3 class="modal-title">Remover produto</h3>
+    <ng-content></ng-content>
+    <div class="modal-footer">
+      <button (click)="confirm()">Confirm</button>
+      <button (click)="cancel()">Cancel</button>
+    </div>
+  </div>
+</div>

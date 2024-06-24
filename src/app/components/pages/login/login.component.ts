@@ -22,41 +22,28 @@ export class LoginComponent {
     private Auth: AuthService
   ) {
     this.loginForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(5)]],
+      email: ['donaJoana@gmail.com', [Validators.required, Validators.email]],
+      password: ['joana123', [Validators.required, Validators.minLength(5)]],
     });
   }
 
   ngOnInit() {
-    if (this.Auth.isLoggedIn()) {
-      this.router.navigateByUrl('inicio');
-      this.toaster.success('Bem vindo de volta');
-    }
+    this.Auth.isLoggedIn();
   }
 
   onSubmit(event: Event): void {
     event.preventDefault(); // Evita o comportamento padrão de envio do formulário
+    alert('entrei');
 
     // this.checkInputs()
     if (this.loginForm.valid) {
       const { email, password } = this.loginForm.value;
-      this.checkInputs(email, password);
+      this.supaService.checkLogin(email, password);
     } else {
       this.toaster.error(
         'Email ou senha estão incorretos',
         'Falha ao realizar login'
       );
     }
-  }
-
-  checkInputs(email: string, password: string): void {
-    this.supaService.confirmLoggin(email, password).subscribe((res) => {
-      const logginAllowed: boolean = res;
-
-      if (logginAllowed) {
-        this.Auth.login();
-        this.router.navigateByUrl('inicio');
-      }
-    });
   }
 }

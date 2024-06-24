@@ -1,8 +1,12 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
 import { Observable, from } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { User } from '../models/Usuario';
+import { AuthService } from './auth.service';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { UserDetails } from '../models/UserDetails';
 
 @Injectable({
   providedIn: 'root',
@@ -12,11 +16,10 @@ export class SupabaseService {
   private supabaseKey =
     'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtyanJsZXBmZWl3a2l5ZGtqeXBvIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcxMTMyMjE1MiwiZXhwIjoyMDI2ODk4MTUyfQ.dHHr5RQ7nyKdeyNFSssFZWkV0EqzesUAjqRK0AZC-7I';
   public supabase: SupabaseClient;
+  toaster = inject(ToastrService);
   //
-  constructor() {
-    console.log('SupabaseService is being initialized');
+  constructor(private auth: AuthService, private router: Router) {
     this.supabase = createClient(this.supabaseUrl, this.supabaseKey);
-    console.log('Supabase client created');
   }
 
   //#region "User Methods"
@@ -28,6 +31,18 @@ export class SupabaseService {
         .from('tusuario')
         .select('*')
         .then(({ data }) => data as User[])
+    );
+  }
+
+  getUserDetails(user: User): Observable<any> {
+    const ut = user.tipo_usuario;
+
+    return from(
+      this.supabase
+        .from(`t${ut}`)
+        .select('*')
+        .eq('id_usuario', user.id_usuario)
+        .single()
     );
   }
 
@@ -52,7 +67,7 @@ export class SupabaseService {
   createUser(
     //Cria um novo usuário base
     email: string,
-    password: string,
+    senhaUsuario: string,
     tipoUsuario: string
   ): Observable<any> {
     const createUserPromise = this.supabase
@@ -61,7 +76,7 @@ export class SupabaseService {
         {
           email_usuario: email,
           tipo_usuario: tipoUsuario,
-          senha_usuario: password,
+          senha_usuario: senhaUsuario,
         },
       ])
       .select();
@@ -77,19 +92,42 @@ export class SupabaseService {
     );
   }
 
-  confirmLoggin(email: string, password: string): Observable<boolean> {
-    return this.fetchUserByEmail(email).pipe(
-      map((res: any) => {
-        if (res != null) {
-          //todo - colocar criptografia de senha com o bycript ()
-          return res.senha_usuario === password;
-          //Salvar usuário
-        }
-        return false;
-      })
-    );
-  }
+  checkLogin(email: string, senhaUsuario: string): void {
+    let user: any = {};
+    let userDetails: any = {};
 
+    this.fetchUserByEmail(email).subscribe((res) => {
+      if (res != null) {
+        if (res.senha_usuario == senhaUsuario) {
+          user = { ...res };
+          // this.auth.login(res);
+          this.getUserDetails(user).subscribe(({ data, error }) => {
+            if (!error) {
+              userDetails = { ...data };
+              this.auth.saveCurrentUser(user, userDetails);
+
+              return;
+            } else {
+              this.toaster.error(
+                'Não foi encontrado um cadastro com o usuário correspondente',
+                'Erro de login'
+              );
+            }
+          });
+        } else {
+          this.toaster.error(
+            'Os campos informados estão incorretos',
+            'Erro de login'
+          );
+        }
+      } else {
+        this.toaster.error(
+          'Os campos informados estão incorretos',
+          'Erro de login'
+        );
+      }
+    });
+  }
   //#endregion
 
   //#region Empresa
@@ -104,8 +142,6 @@ export class SupabaseService {
     imageAddress: string,
     typeCompany: string
   ): Observable<any> {
-    console.log('tipo' + typeCompany);
-
     const createUserPromise = this.supabase
       .from(`${typeCompany == 'empresa' ? 'tempresa' : 'trestaurante'}`)
       .insert([

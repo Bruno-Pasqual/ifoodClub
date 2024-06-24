@@ -8,8 +8,10 @@ import { PaginaInicialComponent } from './components/pages/pagina-inicial/pagina
 import { ToastrModule } from 'ngx-toastr';
 import { PedidosComponent } from './components/restaurante/pedidos/pedidos.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
-import { ProdutosComponent } from './components/restaurante/produtos/produtos.component';
+import ProdutosComponent from './components/restaurante/produtos/produtos.component';
 import { ProductCardComponent } from './components/restaurante/product-card/product-card.component';
+import { ModalComponent } from './components/shared/modal/modal.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -21,9 +23,11 @@ import { ProductCardComponent } from './components/restaurante/product-card/prod
     PedidosComponent,
     ProdutosComponent,
     ProductCardComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     LoginModule,
     ToastrModule.forRoot(),

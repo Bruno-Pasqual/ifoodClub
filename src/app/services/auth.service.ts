@@ -1,29 +1,54 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
+import { User } from '../models/Usuario';
+import { UserDetails } from '../models/UserDetails';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { CurrentUser } from '../models/CurrentUser';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
   private readonly loggedInKey = 'loggedIn';
+  toaster = inject(ToastrService);
 
-  constructor() {}
+  constructor(private router: Router) {}
 
-  // Método para fazer login
   login(): void {
     localStorage.setItem(this.loggedInKey, 'true');
+    this.router.navigateByUrl('inicio');
+    this.toaster.success('Loggin realizado com sucesso');
   }
 
-  // Método para fazer logout
   logout(): void {
     localStorage.removeItem(this.loggedInKey);
+    localStorage.removeItem('currentUser');
   }
 
-  // Método para verificar se o usuário está logado
-  isLoggedIn(): boolean {
-    return localStorage.getItem(this.loggedInKey) === 'true';
+  isLoggedIn(): void {
+    const isLogged: boolean = localStorage.getItem(this.loggedInKey) === 'true';
+
+    if (isLogged) {
+      this.router.navigateByUrl('inicio');
+      this.toaster.success('Bem vindo de volta');
+    }
   }
 
-  saveCurrentUser(): void {
-    // Método placeholder, você pode adicionar a lógica necessária aqui.
+  saveCurrentUser(user: User, userDetails: UserDetails): void {
+    const currentUser = {
+      ...user,
+      ...userDetails,
+    };
+
+    localStorage.setItem('currentUser', JSON.stringify(currentUser));
+    this.login();
+  }
+
+  getCurrentUser(): CurrentUser | null {
+    const currentUserString = localStorage.getItem('currentUser');
+    if (currentUserString) {
+      return JSON.parse(currentUserString) as CurrentUser;
+    }
+    return null;
   }
 }

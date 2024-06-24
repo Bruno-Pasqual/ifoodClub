@@ -1,5 +1,5 @@
 <div class="product-card-container">
-  <div class="imagem-pedido"></div>
+  <!-- <div class="imagem-pedido"></div>
   <div class="co-detalhes-pedido">
     <p class="nome-prato">Frango a milanesa</p>
     <p>Delicioso frango a milanesa</p>
@@ -76,5 +76,13 @@
         </g>
       </svg>
     </button>
-  </div>
+  </div> -->
+  <button (click)="openModal()">Open Modal</button>
+
+  <app-modal #modal (onConfirm)="handleConfirm()" (onCancel)="handleCancel()">
+    <p>
+      Você tem certeza que deseja remover o produto da lista de produtos
+      disponiveis ?
+    </p>
+  </app-modal>
 </div>

@@ -1,8 +1,8 @@
 // user.model.ts
 
 export interface User {
-  id: number;
-  tipo: string;
-  senha: string;
-  email: string;
+  id_usuario: number;
+  tipo_usuario: string;
+  senha_usuario: string;
+  email_usuario: string;
 }
