@@ -11,6 +11,7 @@ import { ComofuncionaComponent } from '../components/comofunciona/comofunciona.c
 import { CardComofuncionaComponent } from '../components/card-comofunciona/card-comofunciona.component';
 import { OpinioesComponent } from '../components/opinioes/opinioes.component';
 import { FooterComponent } from '../components/footer/footer.component';
+import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { FooterComponent } from '../components/footer/footer.component';
     FooterComponent,
     GenericInputComponent,
   ],
-  imports: [CommonModule, RouterModule, ReactiveFormsModule],
+  imports: [CommonModule, RouterModule, ReactiveFormsModule, NgxMaskDirective],
   exports: [HeaderComponent],
+  providers: [provideNgxMask()],
 })
 export class LoginModule {}

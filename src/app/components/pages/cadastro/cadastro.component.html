@@ -64,10 +64,10 @@
       </div>
 
       <!-- Form Empresa/Restaurante -->
-      <div *ngIf="tipoCadastro != ''">
+      <div *ngIf="tipoCadastro !== ''">
         <div class="form-container">
           <label for="nome">{{
-            tipoCadastro == "Empresa"
+            tipoCadastro === "Empresa"
               ? "Nome da empresa"
               : "Nome do restaurante"
           }}</label>
@@ -75,27 +75,30 @@
             formControlName="nome"
             type="text"
             placeholder="{{
-              tipoCadastro == 'Empresa'
+              tipoCadastro === 'Empresa'
                 ? 'Digite o nome da sua empresa'
                 : 'Digite o nome do seu restaurante'
             }}"
           />
-          <!-- todo - colocar mascará nos campos CNPJ e CEP -->
         </div>
         <div class="form-container">
           <label for="cnpj">CNPJ</label>
           <input
             formControlName="cnpj"
-            type="number"
-            placeholder="{{ 'Digite o CNPJ' }}"
+            type="text"
+            placeholder="Digite o CNPJ"
+            [mask]="'00.000.000/0000-00'"
+            maxlength="18"
           />
         </div>
         <div class="form-container">
-          <label for="cnpj">CEP</label>
+          <label for="cep">CEP</label>
           <input
             formControlName="cep"
-            type="number"
+            type="text"
             placeholder="Digite o CEP"
+            [mask]="'00000-000'"
+            maxlength="9"
           />
         </div>
         <div class="form-container">
@@ -103,7 +106,7 @@
           <input formControlName="numero" type="number" placeholder="Número" />
         </div>
         <div class="form-container">
-          <label for="numero">Logo da empresa</label>
+          <label for="imagem">Logo da empresa</label>
           <input
             formControlName="imagem"
             type="text"

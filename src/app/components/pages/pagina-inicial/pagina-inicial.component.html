@@ -4,7 +4,7 @@
       <!-- <h2>{{ currentPage }}</h2> -->
       <app-pedidos *ngIf="currentPage == 'pedidos'"></app-pedidos>
       <app-produtos *ngIf="currentPage === 'produtos'"></app-produtos>
-      <app-employee></app-employee>
+      <app-employee *ngIf="currentPage === 'funcionarios'"></app-employee>
     </div>
   </div>
 

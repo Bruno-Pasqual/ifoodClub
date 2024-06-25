@@ -21,17 +21,26 @@ export class CadastroComponent {
   ) {
     this.cadastroForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
-      //todo - colocar criptografia de senha com o bycript
+      // TODO: colocar criptografia de senha com bcrypt
       password: ['', [Validators.required]],
       confirmPassword: ['', [Validators.required]],
       tipoUsuario: ['', [Validators.required]],
-      // empresa
+      // empresa ou restaurante
       nome: ['', [Validators.required]],
-      cnpj: ['', [Validators.required]],
-      cep: ['', [Validators.required]],
+      cnpj: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(14),
+          Validators.maxLength(18),
+        ],
+      ],
+      cep: [
+        '',
+        [Validators.required, Validators.minLength(8), Validators.maxLength(9)],
+      ],
       numero: ['', [Validators.required]],
       imagem: ['', [Validators.required]],
-      // Restaurante
     });
   }
 

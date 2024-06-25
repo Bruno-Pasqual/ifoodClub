@@ -14,6 +14,7 @@ import { ModalComponent } from './components/shared/modal/modal.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { EmployeeComponent } from './components/pages/employee/employee.component';
+import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
 
 @NgModule({
   declarations: [
@@ -33,10 +34,11 @@ import { EmployeeComponent } from './components/pages/employee/employee.componen
     BrowserAnimationsModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    NgxMaskDirective,
 
     ToastrModule.forRoot(),
   ],
-  providers: [],
+  providers: [provideNgxMask()],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
