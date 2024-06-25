@@ -10,6 +10,7 @@ import { StateService } from '../../../services/state.service';
 })
 export class NavbarComponent {
   currentPage: string = 'inicio';
+  tipoUsuario: string = '';
 
   constructor(
     private auth: AuthService,
@@ -20,6 +21,7 @@ export class NavbarComponent {
   ngOnInit(): void {
     this.stateService.currentPage$.subscribe((pagina) => {
       this.currentPage = pagina;
+      this.tipoUsuario = this.auth.getCurrentUser().tipo_usuario;
     });
   }
 

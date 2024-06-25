@@ -7,8 +7,8 @@ import { User } from '../models/Usuario';
 import { AuthService } from './auth.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { UserDetails } from '../models/UserDetails';
 import { Produto } from '../models/Produto';
+import { Employee } from '../models/Employee';
 
 @Injectable({
   providedIn: 'root',
@@ -174,7 +174,6 @@ export class SupabaseService {
       if (res != null) {
         if (res.senha_usuario == senhaUsuario) {
           user = { ...res };
-          // this.auth.login(res);
           this.getUserDetails(user).subscribe(({ data, error }) => {
             if (!error) {
               userDetails = { ...data };
@@ -204,8 +203,37 @@ export class SupabaseService {
   }
   //#endregion
 
-  //#region Empresa
+  //#region "Empresa"
+  createEmployee(employee: Employee): Observable<any> {
+    const { id_funcionario, id_empresa, id_usuario, nome_funcionario } =
+      employee;
 
+    const createUserPromise = this.supabase
+      .from(`tproduto`)
+      .insert([
+        {
+          id_empresa,
+          id_funcionario,
+          nome_funcionario,
+        },
+      ])
+      .select();
+
+    return from(createUserPromise).pipe(
+      map(({ data, error }) => {
+        if (error) {
+          this.toaster.error('Alguma coisa deu errado', 'Erro de servidor');
+
+          console.error('Error creating company:', error);
+          throw new Error(error.message);
+        }
+        this.toaster.success('O funcionário foi cadastrado com sucesso');
+        return data;
+      })
+    );
+  }
+
+  //#endregion
   createCompany(
     //Cria um novo usuário especializado
     nome: string,

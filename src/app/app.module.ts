@@ -13,6 +13,7 @@ import { ProductCardComponent } from './components/restaurante/product-card/prod
 import { ModalComponent } from './components/shared/modal/modal.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
+import { EmployeeComponent } from './components/pages/employee/employee.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ProdutosComponent,
     ProductCardComponent,
     ModalComponent,
+    EmployeeComponent,
   ],
   imports: [
     BrowserModule,
