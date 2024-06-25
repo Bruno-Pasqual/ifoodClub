@@ -37,7 +37,5 @@ export class ProductCardComponent {
       });
   }
 
-  handleCancel() {
-    console.log('Cancelled!');
-  }
+  handleCancel() {}
 }

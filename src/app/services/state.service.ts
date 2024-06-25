@@ -9,7 +9,6 @@ export class StateService {
   currentPage$ = this.currentPageSubject.asObservable();
 
   setCurrentPage(pagina: string): void {
-    console.log(pagina);
     this.currentPageSubject.next(pagina);
   }
 }

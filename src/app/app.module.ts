@@ -15,6 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { EmployeeComponent } from './components/pages/employee/employee.component';
 import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
+import { CrudComponent } from './components/shared/crud/crud.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
     ProductCardComponent,
     ModalComponent,
     EmployeeComponent,
+    CrudComponent,
   ],
   imports: [
     BrowserModule,

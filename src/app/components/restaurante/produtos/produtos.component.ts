@@ -54,18 +54,12 @@ export default class ProdutosComponent {
     });
   }
 
-  handleConfirm() {
-    console.log('Confirmed!');
-  }
+  handleConfirm() {}
 
-  handleCancel() {
-    console.log('Cancelled!');
-  }
+  handleCancel() {}
 
   onSubmit(): void {
     if (this.cadastroForm.valid) {
-      console.log('Formulário válido', this.cadastroForm.value);
-
       const { nomeProduto, descricao, preco, enderecoImagem } =
         this.cadastroForm.value;
 
@@ -83,7 +77,6 @@ export default class ProdutosComponent {
 
       this.supabase.createProduto(newProduto).subscribe({
         next: (data) => {
-          console.log('Produto criado com sucesso:', data);
           this.modal.closeModal();
           this.atualizaProdutos();
         },

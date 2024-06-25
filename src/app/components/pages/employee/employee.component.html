@@ -2,12 +2,20 @@
   <div class="header-employee-co">
     <div>
       <p class="page-title">Funcionarios</p>
-      <p class="sub-title">
-        Aqui é onde você pode cadastrar ou remover um funcionário da sua equipe,
-        funcionários cadastrados terão acesso ao menu que a empresa escolher
-      </p>
     </div>
     <div class="employees-co"></div>
-    <button class="btn-cadastrar-funcionario">+ Funcionario</button>
+    <button class="btn-cadastrar-funcionario">+</button>
   </div>
 </div>
+
+<app-modal
+  *ngIf="firstTime == true"
+  title="Funcionários"
+  #modal
+  (onConfirm)="closeModal()"
+>
+  <p class="sub-title">
+    Aqui é onde você pode cadastrar ou remover um funcionário da sua equipe,
+    funcionários cadastrados terão acesso ao menu que a empresa escolher
+  </p>
+</app-modal>

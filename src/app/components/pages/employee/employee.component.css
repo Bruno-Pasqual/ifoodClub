@@ -7,7 +7,7 @@
 .page-title {
   font-weight: 700;
   color: #bb3301;
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 .sub-title {
@@ -18,7 +18,7 @@
 }
 
 .btn-cadastrar-funcionario {
-  padding: 0.7rem 1.4rem;
+  padding: 0.7rem;
   border-radius: 8px;
   border: none;
   background: #bb3301;

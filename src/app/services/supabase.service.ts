@@ -14,15 +14,30 @@ import { Employee } from '../models/Employee';
   providedIn: 'root',
 })
 export class SupabaseService {
+  //#region "supa config"
   private supabaseUrl = 'https://krjrlepfeiwkiydkjypo.supabase.co';
   private supabaseKey =
     'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtyanJsZXBmZWl3a2l5ZGtqeXBvIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcxMTMyMjE1MiwiZXhwIjoyMDI2ODk4MTUyfQ.dHHr5RQ7nyKdeyNFSssFZWkV0EqzesUAjqRK0AZC-7I';
   public supabase: SupabaseClient;
+  //#endregion
+
   toaster = inject(ToastrService);
   //
   constructor(private auth: AuthService, private router: Router) {
     this.supabase = createClient(this.supabaseUrl, this.supabaseKey);
   }
+
+  //#region "Funcionários"
+
+  // createEmployee() {
+  //   const { data, error } = await this.supabase
+  //     .from('tfuncionario')
+  //     .insert([{
+
+  //     }]);
+  // }
+
+  //#endregion
 
   //#region "Produtos"
 
@@ -237,6 +252,7 @@ export class SupabaseService {
   }
 
   //#endregion
+
   createCompany(
     //Cria um novo usuário especializado
     nome: string,
