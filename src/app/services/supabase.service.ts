@@ -121,19 +121,22 @@ export class SupabaseService {
   }
 
   fetchUserByEmail(email: string): Observable<any> {
-    //Busca um usuário utilizando o email como parâmetro
+    // Busca um usuário utilizando o email como parâmetro
     return from(
       this.supabase
         .from('tusuario')
         .select('*')
         .eq('email_usuario', email)
-        .single()
         .then(({ data, error }) => {
           if (error) {
             console.error('Error fetching user by email:', error);
             return null;
           }
-          return data;
+          if (data.length !== 1) {
+            console.error('Expected a single result, but found:', data.length);
+            return null;
+          }
+          return data[0];
         })
     );
   }

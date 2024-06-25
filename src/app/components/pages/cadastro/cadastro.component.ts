@@ -47,40 +47,48 @@ export class CadastroComponent {
   ngOnInit() {}
 
   onSubmit(event: Event): void {
-    event.preventDefault();
-    const {
-      email,
-      password,
-      confirmPassword,
-      tipoUsuario,
-      nome,
-      cnpj,
-      cep,
-      numero,
-      imagem,
-    } = this.cadastroForm.value;
-
-    if (this.cadastroForm.invalid || password != confirmPassword) {
-      this.toaster.error(
-        'Algo deu errado com os inputs, verifique-os e tente novamente',
-        'Falha nos campos'
-      );
-    } else {
-      this.supaService
-        .createUser(email, password, tipoUsuario)
-        .subscribe((res) => {
-          const id_usuario: number = res[0].id_usuario;
-          this.createCompany(
+    this.supaService
+      .fetchUserByEmail(this.cadastroForm.value.email)
+      .subscribe((res) => {
+        if (res == null) {
+          event.preventDefault();
+          const {
+            email,
+            password,
+            confirmPassword,
+            tipoUsuario,
             nome,
             cnpj,
             cep,
             numero,
-            id_usuario,
             imagem,
-            tipoUsuario
-          );
-        });
-    }
+          } = this.cadastroForm.value;
+
+          if (this.cadastroForm.invalid || password != confirmPassword) {
+            this.toaster.error(
+              'Algo deu errado com os inputs, verifique-os e tente novamente',
+              'Falha nos campos'
+            );
+          } else {
+            this.supaService
+              .createUser(email, password, tipoUsuario)
+              .subscribe((res) => {
+                const id_usuario: number = res[0].id_usuario;
+                this.createCompany(
+                  nome,
+                  cnpj,
+                  cep,
+                  numero,
+                  id_usuario,
+                  imagem,
+                  tipoUsuario
+                );
+              });
+          }
+        } else {
+          this.toaster.error('O email informado já está em uso');
+        }
+      });
   }
 
   updateTipoCadastro(tipo: string): void {

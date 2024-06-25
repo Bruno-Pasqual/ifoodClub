@@ -27,9 +27,7 @@ export class LoginComponent {
     });
   }
 
-  ngOnInit() {
-    this.Auth.isLoggedIn();
-  }
+  async ngOnInit() {}
 
   onSubmit(): void {
     if (this.loginForm.valid) {
