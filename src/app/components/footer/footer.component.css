@@ -1,128 +1,127 @@
 footer{
-    background-color: #BB3301;
-    height: 15rem;
-    width: 100%;
-    position: relative;
-    z-index: 2;
-    margin-top: 40%;
-    padding: 5% 10% 2% 10%;
-    color: #fff;
+  background-color: #BB3301;
+  height: 15rem;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  margin-top: 40%;
+  padding: 5% 10% 2% 10%;
+  color: #fff;
 }
 footer .footer-content{
-    display: flex;
-    align-items: flex-start;
-    width: 100%;
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
 
 }
 .footer-content .logo-text{
-    display: flex;
-    flex-direction: column;
-    padding-right: 10%;
-    justify-content: space-evenly;
+  display: flex;
+  flex-direction: column;
+  padding-right: 10%;
+  justify-content: space-evenly;
 }
 .footer-content .logo-text p{
-    width: 80%;
+  width: 80%;
 
 }
 .footer-content .logo-text img{
-    width: 1.5rem;
+  width: 1.5rem;
 }
 .footer-content .logo-text .logo{
-    display: flex;
-    align-items: center;
-    font-size: 18px;
-    font-weight: 400;
-    gap: 1%;
-    color: #fff;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 400;
+  gap: 1%;
+  color: #fff;
 }
 p{
-    font-size: 14px;
-    color: #ffffffba;
+  font-size: 14px;
+  color: #ffffffba;
 }
 .contact-icons{
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 
 
 }
 .contact-icons .contact{
-    width: 10rem;
+  width: 10rem;
 }
 .contact-icons .follow{
-    display: flex;
-    flex-direction: column;
-    width: 10rem;
-    height: 5rem;
-    gap: 15%;
-    justify-content: flex-start;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 10rem;
+  height: 5rem;
+  gap: 15%;
+  justify-content: flex-start;
+  align-items: center;
 }
 .follow h4{
   letter-spacing: 1px;
 }
 
 .contact-icons .icons{
+  display: flex;
+  justify-content: center;
+  gap: 8%;
+}
+
+@media (min-width:360px) and (max-width:375px){
+  footer{
+    background-color: #BB3301;
+    height: fit-content;
+    width: 100%;
+    position: relative;
+    margin-top: 80%;
+    z-index: 2;
+    padding: 2% 1% 2% 1%;
+    color: #fff;
+    font-size: 8px;
+  }
+  .footer-content .logo-text{
+    padding-right: 0%;
+  }
+  .footer-content .logo-text p{
+    width: 100%;
+    font-size: 10px;
+  }
+  .contact-icons .follow{
+    display: none;
+  }
+  .contact h4{
+    font-size: 20px;
+  }
+  .contact-icons{
+    width: min-content;
+  }
+}
+@media (min-width:376px) and (max-width:767px){
+  footer{
+    background-color: #BB3301;
+    height: 12rem;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    margin-top: 80%;
+    bottom: 0;
+    padding: 5% 10% 2% 10%;
+    color: #fff;
+  }
+  p{
+    font-size: 12px;
+    color: #ffffffba;
+  }
+  .footer-content .logo-text p{
+    width: 100%;
+    font-size:10px;
+  }
+  .footer-content .logo-text{
+    padding-right: 1%;
+  }
+  .contact{
     display: flex;
-    justify-content: center;
-    gap: 8%;
-}
-@media (min-width:375px) and (max-width:499px){
-    footer{
-        background-color: #BB3301;
-        height: fit-content;
-        width: 100%;
-        position: relative;
-        margin-top: 80%;
-        z-index: 2;
-        padding: 2% 1% 2% 1%;
-        color: #fff;
-        font-size: 8px;
-    }
-    .footer-content .logo-text{
-        padding-right: 0%;
-    }
-    .footer-content .logo-text p{
-        width: 100%;
-        font-size: 10px;
-    }
-    .contact-icons .follow{
-        display: none;
-    }
-    .contact h4{
-        font-size: 20px;
-    }
-    .contact-icons{
-      width: min-content;
-    }
-}
-@media (min-width:500px) and (max-width:767px){
-    footer{
-        background-color: #BB3301;
-        height: 12rem;
-        width: 100%;
-        position: relative;
-        z-index: 2;
-        margin-top: 80%;
-        bottom: 0;
-        padding: 5% 10% 2% 10%;
-        color: #fff;
-    }
-    p{
-        font-size: 12px;
-        color: #ffffffba;
-    }
-    .footer-content .logo-text p{
-        width: 100%;
-        font-size:10px;
-    }
-    .footer-content .logo-text{
-        padding-right: 1%;
-    }
-    .contact{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-
+    flex-direction: column;
+    align-items: center;
+  }
 }

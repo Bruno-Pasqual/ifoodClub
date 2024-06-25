@@ -1,122 +1,125 @@
 .opinioes{
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    z-index: 3;
-    width: 100%;
-    padding-bottom: 5%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  padding-bottom: 5%;
 }
 
 .opinioes h2{
-    width: 100%;
-    padding-left: 5%;
-    color: #000;
-    font-size: 36px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
+  width: 100%;
+  padding-left: 5%;
+  color: #000;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 }
 .carrossel{
-    margin-top: 12%;
-    display: flex;
-    justify-content: space-around;
-    cursor: grab;
-    overflow: hidden;
-    position: absolute;
-    width: 100%;
-    -webkit-user-select: none; /* Safari */
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* IE10+/Edge */
-    user-select: none; /* Standard syntax */
+  margin-top: 12%;
+  display: flex;
+  justify-content: space-around;
+  cursor: grab;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard syntax */
 
 }
 .carrossel-item{
-    display: flex;
-    width: 420.612px;
-    height: 200px;
-    flex-shrink: 0;
-    border-radius: 10px;
-    border: 3px solid #000;
-    background: #D1B4B4;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    padding: 1% 1% 1% 1%;
-    margin-left: 1%;
-    gap: 5%;
-    position: relative;
+  display: flex;
+  width: 420.612px;
+  height: 200px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  border: 3px solid #000;
+  background: #D1B4B4;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  padding: 1% 1% 1% 1%;
+  margin-left: 1%;
+  gap: 5%;
+  position: relative;
 
-    transition: transform 0.3s ease-in-out;
-    transform: translateX(calc(-55% * var(--index)));
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(calc(-55% * var(--index)));
 }
 .carrossel-item.active {
-    transform: translateX(1);
-  }
+  transform: translateX(1);
+}
 .opinioes .foto-usuario{
-    max-width: 106.884px;
-    height: 200px;
+  max-width: 106.884px;
+  height: 200px;
 }
 .opinioes .foto-nome{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 18px;
-    color: #000;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 150.038%; /* 21.005px */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  color: #000;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150.038%; /* 21.005px */
 }
 .opinioes .opiniao-texto{
-    color: #000;
-    padding-top: 5%;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 150.038%; /* 21.005px */
+  color: #000;
+  padding-top: 5%;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150.038%; /* 21.005px */
 }
-@media (min-width: 375px) and (max-width: 500px){
+@media (min-width: 360px) and (max-width: 375px){
     .opinioes{
-        margin-top: 0%;
-        height: 10rem;
-        background-color: #fff;
+      margin-top: 0%;
+      height: 10rem;
+      background-color: #fff;
     }
    .carrossel{
-        margin-top: 22%;
-        height: 13rem;
-        color: #fff;
+      margin-top: 22%;
+      height: 13rem;
+      color: #fff;
    }
    .carrossel-item{
-        transform: translateX(calc(-100% * var(--index)));
-        width: 355.612px;
-        height: 200px;
+      transform: translateX(calc(-100% * var(--index)));
+      width: 355.612px;
+      height: 200px;
    }
 }
 
 @media (min-width: 768px) and (max-width: 1179px){
-    .carrossel-item{
-        transform: translateX(calc(-70% * var(--index)));
-    }
+  .carrossel-item{
+      transform: translateX(calc(-70% * var(--index)));
+  }
 }
 
-@media (min-width:500px) and (max-width:767px){
-    .carrossel-item{
-        transform: translateX(calc(-101% * var(--index)));
-        width: 360.612px;
-        height: 200px;
-    }
-    .carrossel{
-        margin-top: 20%;
-        display: flex;
-        justify-content: space-around;
-        cursor: grab;
-        overflow: hidden;
-        position: absolute;
-        width: 100%;
-        -webkit-user-select: none; /* Safari */
-        -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* IE10+/Edge */
-        user-select: none; /* Standard syntax */
+@media (min-width:375px) and (max-width:767px){
+  .opinioes{
+    height: 15rem;
+  }
+  .carrossel-item{
+      transform: translateX(calc(-101% * var(--index)));
+      width: 360.612px;
+      height: 200px;
+  }
+  .carrossel{
+      margin-top: 20%;
+      display: flex;
+      justify-content: space-around;
+      cursor: grab;
+      overflow: hidden;
+      position: absolute;
+      width: 100%;
+      -webkit-user-select: none; /* Safari */
+      -moz-user-select: none; /* Firefox */
+      -ms-user-select: none; /* IE10+/Edge */
+      user-select: none; /* Standard syntax */
 
-    }
+  }
 }
 @media (min-width: 768px) and (max-width:1179px){
   .opinioes{
@@ -130,7 +133,7 @@
 }
 
 @media (min-width: 1180px) {
-    .carrossel-item{
-        transform: translateX(calc(-60% * var(--index)));
-    }
+  .carrossel-item{
+      transform: translateX(calc(-60% * var(--index)));
+  }
 }
