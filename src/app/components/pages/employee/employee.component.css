@@ -1,0 +1,31 @@
+.header-employee-co {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.page-title {
+  font-weight: 700;
+  color: #bb3301;
+  font-size: 3rem;
+}
+
+.sub-title {
+  max-width: 600px;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  opacity: 0.5;
+}
+
+.btn-cadastrar-funcionario {
+  padding: 0.7rem 1.4rem;
+  border-radius: 8px;
+  border: none;
+  background: #bb3301;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.employee-page-container {
+  border: 1px solid orange;
+}
