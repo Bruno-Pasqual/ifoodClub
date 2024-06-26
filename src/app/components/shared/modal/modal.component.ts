@@ -19,6 +19,8 @@ export class ModalComponent {
   @Output() onCancel = new EventEmitter<void>();
   @Input()
   titulo!: string;
+  @Input() confirmBtnText: string = 'Confirmar';
+  @Input() cancelBtnText: string = 'Cancelar';
 
   showModal() {
     this.isVisible = true;

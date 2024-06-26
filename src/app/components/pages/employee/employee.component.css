@@ -1,3 +1,8 @@
+.employee-page-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
 .header-employee-co {
   display: flex;
   justify-content: space-between;
@@ -26,6 +31,131 @@
   font-size: 1.2rem;
 }
 
-.employee-page-container {
-  border: 1px solid orange;
+.no-employee-co {
+  margin-top: 6rem;
+}
+
+.no-employee-co button {
+  padding: 0.75rem 2rem;
+}
+
+.no-employee-msg {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.section-title-co {
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 4rem;
+}
+
+.employees-img {
+  max-width: 400px;
+}
+
+.registered-employees-list {
+  margin-top: 2rem;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.5rem;
+}
+
+label {
+  margin-bottom: 0.5rem;
+}
+
+input {
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  padding: 0.6rem 0.5rem;
+}
+
+@media (min-width: 600px) {
+  .no-employee-co {
+    display: flex;
+
+    column-gap: 2rem;
+    align-items: center;
+  }
+}
+
+.employee-list-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 3px 2px 5px rgba(0, 0, 0, 0.116);
+  padding: 1rem;
+  display: flex;
+  column-gap: 20px;
+  align-items: center;
+}
+
+.info-container p {
+  margin-top: 0.5rem;
+}
+
+.employee-img {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  align-items: center;
+  outline: 3px solid black;
+}
+
+.buttons-container button {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+}
+
+label {
+  font-weight: 600;
+}
+
+.info-co p {
+  opacity: 0.4;
+}
+
+.info-container {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 5px;
+  row-gap: 5px;
+  flex-grow: 1;
+}
+
+.wrapper {
+  display: flex;
+  column-gap: 10px;
+}
+
+@media (min-width: 800px) {
+  .card-button:hover {
+    cursor: pointer;
+    opacity: 0.7;
+  }
+
+  .employee-list-card {
+    padding: 1rem;
+    justify-content: space-around;
+  }
+
+  .info-container {
+    /* flex-grow: 0; */
+    justify-content: space-around;
+  }
+
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+  }
+
+  .info-co {
+    row-gap: 10px;
+  }
 }

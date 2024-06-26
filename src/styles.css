@@ -24,6 +24,7 @@ body {
   border: none;
   border-radius: 4px;
   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.267);
+  padding: 0.5rem 1rem;
 }
 
 .btn-secondary {
@@ -31,4 +32,15 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.274);
   border-radius: 4px;
   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.267);
+}
+
+@media (min-width: 800px) {
+  .btn-primary:hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }
+
+  .btn-primary {
+    padding: 1rem 1.5rem;
+  }
 }

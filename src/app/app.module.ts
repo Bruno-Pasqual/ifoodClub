@@ -16,6 +16,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { EmployeeComponent } from './components/pages/employee/employee.component';
 import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
 import { CrudComponent } from './components/shared/crud/crud.component';
+import { NoEmployeeComponent } from './assets/svg/components/no-employee/no-employee.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { CrudComponent } from './components/shared/crud/crud.component';
     ModalComponent,
     EmployeeComponent,
     CrudComponent,
+    NoEmployeeComponent,
   ],
   imports: [
     BrowserModule,

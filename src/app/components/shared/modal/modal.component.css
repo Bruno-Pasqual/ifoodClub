@@ -48,6 +48,11 @@ button {
   border-radius: 8px;
 }
 
+button:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
 .modal-title {
   margin-bottom: 1rem;
   color: #bb3301;

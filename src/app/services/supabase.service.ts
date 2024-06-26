@@ -1,14 +1,14 @@
 import { CurrentUser } from './../models/CurrentUser';
 import { inject, Injectable } from '@angular/core';
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
-import { Observable, from } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable, from, of } from 'rxjs';
+import { catchError, map, switchMap, tap } from 'rxjs/operators';
 import { User } from '../models/Usuario';
 import { AuthService } from './auth.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Produto } from '../models/Produto';
-import { Employee } from '../models/Employee';
+import { EmployeeDetails } from '../models/EmployeeDetails';
 
 @Injectable({
   providedIn: 'root',
@@ -29,12 +29,110 @@ export class SupabaseService {
 
   //#region "Funcionários"
 
-  // createEmployee() {
-  //   const { data, error } = await this.supabase
-  //     .from('tfuncionario')
-  //     .insert([{
+  createEmployee(employee: EmployeeDetails): Observable<any> {
+    // Aqui nessa primeira parte é realizada o cadastro do usuário, o qual nos retornará seu ID que será utilizado para criar o funcionário em seguida
+    return from(
+      this.supabase
+        .from('tusuario')
+        .insert({
+          tipo_usuario: 'funcionario',
+          senha_usuario: employee.password,
+          email_usuario: employee.email,
+        })
+        .select()
+    ).pipe(
+      switchMap(({ data, error }) => {
+        if (error) {
+          this.toaster.error('Erro ao cadastrar o usuário');
+          console.error('Error creating user:', error);
+          throw new Error(error.message);
+        }
 
-  //     }]);
+        const idUsuario = data[0]?.id_usuario;
+
+        return from(
+          this.supabase
+            .from('tfuncionario')
+            .insert({
+              nome_funcionario: employee.nome_funcionario,
+              image: employee.image,
+              id_usuario: idUsuario, // Passa o id_usuario gerado para o cadastro do funcionário
+              id_empresa: employee.id_empresa,
+            })
+            .select()
+        );
+      }),
+      map(({ data, error }) => {
+        if (error) {
+          this.toaster.error('Erro ao cadastrar o funcionário');
+          console.error('Error creating employee:', error);
+          throw new Error(error.message);
+        }
+
+        this.toaster.success(
+          'O funcionário foi criado com sucesso.',
+          'Cadastro realizado'
+        );
+        return data;
+      })
+    );
+  }
+
+  getEmployees(empresaId: number) {
+    const createUserPromise = this.supabase
+      .from('tfuncionario')
+      .select('*')
+      .eq('id_empresa', empresaId);
+
+    return from(createUserPromise).pipe(
+      map(({ data, error }) => {
+        if (error) {
+          this.toaster.error('Alguma coisa deu errado');
+
+          console.error('Error fetching employees:', error);
+          throw new Error(error.message);
+        }
+        return data;
+      })
+    );
+  }
+  removeEmployeeByID(id: number): Observable<any> {
+    return this.getUserByID(id).pipe(
+      switchMap((res) => {
+        if (res.length === 0) {
+          this.toaster.error('O usuário não foi encontrado');
+          return of(null); // Retorna um Observable vazio
+        } else {
+          return from(
+            this.supabase.from('tusuario').delete().eq('id_usuario', id)
+          ).pipe(
+            tap(({ data, error }) => {
+              if (error) {
+                console.error('Error deleting user:', error);
+                this.toaster.error('Erro ao remover o usuário');
+                return;
+              }
+              this.toaster.success('O usuário foi removido com sucesso');
+            }),
+            catchError((err) => {
+              console.error('Error in deletion observable:', err);
+              this.toaster.error('Erro ao remover o usuário');
+              return of(null); // Retorna um Observable vazio em caso de erro
+            })
+          );
+        }
+      })
+    );
+  }
+
+  // removeEmployee(id: number) {
+  //   return from(
+  //     this.supabase
+  //       .from('tusuario')
+  //       .select('*')
+  //       .eq('id_usuario', id)
+  //       .then(({ data }) => data as User[])
+  //   );
   // }
 
   //#endregion
@@ -112,6 +210,16 @@ export class SupabaseService {
   //#endregion
 
   //#region "User Methods"
+
+  getUserByID(id: number) {
+    return from(
+      this.supabase
+        .from('tusuario')
+        .select('*')
+        .eq('id_usuario', id)
+        .then(({ data }) => data as User[])
+    );
+  }
 
   fetchUsuarios(): Observable<User[]> {
     //Lista todos os usuários
@@ -222,34 +330,6 @@ export class SupabaseService {
   //#endregion
 
   //#region "Empresa"
-  createEmployee(employee: Employee): Observable<any> {
-    const { id_funcionario, id_empresa, id_usuario, nome_funcionario } =
-      employee;
-
-    const createUserPromise = this.supabase
-      .from(`tproduto`)
-      .insert([
-        {
-          id_empresa,
-          id_funcionario,
-          nome_funcionario,
-        },
-      ])
-      .select();
-
-    return from(createUserPromise).pipe(
-      map(({ data, error }) => {
-        if (error) {
-          this.toaster.error('Alguma coisa deu errado', 'Erro de servidor');
-
-          console.error('Error creating company:', error);
-          throw new Error(error.message);
-        }
-        this.toaster.success('O funcionário foi cadastrado com sucesso');
-        return data;
-      })
-    );
-  }
 
   //#endregion
 

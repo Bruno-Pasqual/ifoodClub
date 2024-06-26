@@ -3,6 +3,7 @@ export interface CurrentUser {
   cnpj: string;
   email_usuario: string;
   id_restaurante: number;
+  id_empresa: number;
   id_usuario: number;
   image: string;
   nome: string;

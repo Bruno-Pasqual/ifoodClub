@@ -3,9 +3,12 @@
     <h3 class="modal-title">{{ titulo }}</h3>
     <ng-content></ng-content>
     <div class="modal-footer">
-      <button class="btn-primary" (click)="confirm()">Confirm</button>
-      <button class="btn-secondary" (click)="cancel()">Cancel</button>
+      <button class="btn-primary" (click)="confirm()">
+        {{ confirmBtnText }}
+      </button>
+      <button class="btn-secondary" (click)="cancel()">
+        {{ cancelBtnText }}
+      </button>
     </div>
-    
   </div>
 </div>
