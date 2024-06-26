@@ -1,0 +1,10 @@
+.employees-img {
+  max-width: 800px;
+  width: 300px;
+}
+
+@media (min-width: 900px) {
+  .employees-img {
+    width: 500px;
+  }
+}
