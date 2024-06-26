@@ -1,3 +1,4 @@
+import { CurrentUser } from './../../../models/CurrentUser';
 import { Component } from '@angular/core';
 import { AuthService } from '../../../services/auth.service';
 import { Router } from '@angular/router';
@@ -11,12 +12,16 @@ import { StateService } from '../../../services/state.service';
 export class NavbarComponent {
   currentPage: string = 'inicio';
   tipoUsuario: string = '';
+  currentUser: any;
 
   constructor(
     private auth: AuthService,
     private router: Router,
     private stateService: StateService
-  ) {}
+  ) {
+    this.currentUser = this.auth.getCurrentUser();
+    console.log(this.currentUser);
+  }
 
   ngOnInit(): void {
     this.stateService.currentPage$.subscribe((pagina) => {

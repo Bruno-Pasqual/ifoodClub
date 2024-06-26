@@ -23,7 +23,6 @@ export class PaginaInicialComponent {
     this.tipoUsuario = this.auth.getCurrentUser().tipo_usuario;
     this.currentPage = 'inicio';
     this.currentUser = this.auth.getCurrentUser();
-    console.log(this.currentUser);
   }
 
   async ngOnInit(): Promise<void> {

@@ -344,6 +344,7 @@
         </svg>
         <p>Produtos</p>
       </li>
+
       <li class="icon-container" (click)="handleLogout()">
         <svg
           width="30px"
@@ -374,6 +375,15 @@
           </g>
         </svg>
         <p>Sair</p>
+      </li>
+      <li class="icon-container user-container">
+        <img src="{{ currentUser.image }}" alt="" />
+        <p *ngIf="currentUser.nome">{{ currentUser.nome }}</p>
+        <p *ngIf="currentUser.nome_funcionario">
+          {{ currentUser.nome_funcionario }}
+        </p>
+        <p *ngIf="currentUser.nome_empresa">{{ currentUser.nome }}</p>
+        <p *ngIf="currentUser.nome_restaurante">{{ currentUser.nome }}</p>
       </li>
     </ul>
   </div>

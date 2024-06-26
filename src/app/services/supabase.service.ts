@@ -44,6 +44,28 @@ export class SupabaseService {
     return data || []; // Garante que data nunca será null
   }
 
+  async atualizarRestauranteSelecionado(
+    idEmpresa: number,
+    idRestaurante: number
+  ): Promise<void> {
+    try {
+      const { data, error } = await this.supabase
+        .from('tempresa')
+        .update({ restaurante_selecionado: idRestaurante })
+        .eq('id_empresa', idEmpresa)
+        .select();
+
+      if (error) {
+        throw new Error(`Erro ao atualizar tempresa: ${error.message}`);
+      }
+
+      this.toaster.success('O restaurante selecionado foi atualizado');
+    } catch (error) {
+      console.error('Erro na operação de atualização:');
+      throw error;
+    }
+  }
+
   //#endregion
 
   //#region "Funcionários"
@@ -361,33 +383,7 @@ export class SupabaseService {
   }
   //#endregion
 
-  async atualizarRestauranteSelecionado(
-    idEmpresa: number,
-    idRestaurante: number
-  ): Promise<void> {
-    try {
-      console.log('empresa', idEmpresa);
-      console.log('restaurante', idRestaurante);
-
-      const { data, error } = await this.supabase
-        .from('tempresa')
-        .update({ restaurante_selecionado: idRestaurante })
-        .eq('id_empresa', idEmpresa)
-        .select();
-
-      if (error) {
-        throw new Error(`Erro ao atualizar tempresa: ${error.message}`);
-      }
-
-      this.toaster.success('O restaurante selecionado foi atualizado');
-    } catch (error) {
-      console.error('Erro na operação de atualização:');
-      throw error;
-    }
-  }
-
   //#region "Empresa"
-
   async getAllCompanies() {
     let { data, error } = await this.supabase.from('tempresa').select('*');
 
@@ -412,7 +408,6 @@ export class SupabaseService {
   }
 
   createCompany(
-    //Cria um novo usuário especializado
     nome: string,
     cnpj: string,
     cep: string,
@@ -445,5 +440,6 @@ export class SupabaseService {
       })
     );
   }
+
+  //#endregion
 }
-//#endregion

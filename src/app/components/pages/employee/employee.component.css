@@ -45,9 +45,10 @@
 }
 
 .section-title-co {
-  flex-direction: column;
+  /* flex-direction: column; */
   justify-content: space-between;
   margin-top: 4rem;
+  align-items: center;
 }
 
 .employees-img {
@@ -62,6 +63,20 @@
   display: flex;
   flex-direction: column;
   margin-bottom: 0.5rem;
+}
+
+.section-title-co {
+  display: flex;
+}
+
+.section-title {
+  font-size: 2rem;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  opacity: 0.6;
+  margin: 10px 0 30px 0;
 }
 
 label {
@@ -91,6 +106,7 @@ input {
   display: flex;
   column-gap: 20px;
   align-items: center;
+  margin-top: 1rem;
 }
 
 .info-container p {
@@ -131,6 +147,17 @@ label {
 .wrapper {
   display: flex;
   column-gap: 10px;
+}
+
+.user-logo {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+}
+
+.user-logo img {
+  width: 30px;
+  height: 30px;
 }
 
 @media (min-width: 800px) {

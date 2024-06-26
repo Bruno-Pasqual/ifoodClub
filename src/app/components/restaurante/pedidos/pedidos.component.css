@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.container svg {
+  max-width: 600px;
+}
+
+h1 {
+  font-size: 4rem;
+}

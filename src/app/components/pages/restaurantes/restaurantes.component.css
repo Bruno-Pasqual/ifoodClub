@@ -4,20 +4,35 @@
   justify-content: space-between;
   padding: 1rem;
   background-color: white;
-  box-shadow: 3px 5px 4px rgba(0, 0, 0, 0.075);
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.075);
   border-radius: 8px;
   border: 1px solid rgba(211, 211, 211, 0.329);
 }
 
+.container-lista {
+  display: flex;
+  gap: 20px;
+}
+
 .container-img {
   width: 70px;
-  height: 70px;
+
   overflow: hidden;
   border-radius: 50%;
 }
 
+.restaurant-card-container {
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+  background: #bb3301;
+  column-gap: 20px;
+}
+
 .restaurant-card-container p {
   font-size: 1.5rem;
+  color: white;
+  text-align: right;
 }
 
 .restaurante-img {

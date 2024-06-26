@@ -78,19 +78,15 @@ export class EmployeeComponent implements AfterViewInit {
   }
 
   updateEmployees(idEmpresa?: number) {
-    console.log('entrei no update');
-
     const user = this.auth.getCurrentUser();
 
     this.supabase.getEmployees(user.id_empresa).subscribe((res) => {
       this.arrayEmployees = res;
-      console.log(res);
     });
   }
 
   handleRemove(employee: Employee) {
     this.supabase.removeEmployeeByID(employee.id_usuario).subscribe((res) => {
-      console.log('Employee removed:', employee.id_usuario);
       this.updateEmployees();
     });
   }

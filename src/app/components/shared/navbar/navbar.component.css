@@ -49,7 +49,22 @@
   color: rgb(192, 0, 0);
 }
 
+.user-container {
+  margin-top: 6;
+}
+
+li img {
+  width: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  height: 30px;
+}
+
 @media (min-width: 800px) {
+  li img {
+    height: auto;
+  }
+
   .navbar-container {
     width: 60px;
     height: 100%;

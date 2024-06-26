@@ -22,8 +22,8 @@ export class LoginComponent {
     private toastr: ToastrService // Corrigido: Injetar o ToastrService aqui
   ) {
     this.loginForm = this.fb.group({
-      email: ['donaJoana@gmail.com', [Validators.required, Validators.email]],
-      password: ['joana123', [Validators.required, Validators.minLength(5)]],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(5)]],
     });
   }
 
