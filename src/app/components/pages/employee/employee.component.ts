@@ -27,10 +27,10 @@ export class EmployeeComponent implements AfterViewInit {
     private auth: AuthService
   ) {
     this.funcionarioForm = this.fb.group({
-      nome: ['vai toma no cu', Validators.required],
-      email: ['caralho@gmail.com', Validators.required],
-      senha: ['69696969', Validators.required],
-      enderecoImagem: ['xvideos', Validators.required],
+      nome: ['', Validators.required],
+      email: ['', Validators.required],
+      senha: ['', Validators.required],
+      enderecoImagem: ['', Validators.required],
     });
   }
 
@@ -55,6 +55,7 @@ export class EmployeeComponent implements AfterViewInit {
         } else {
           this.supabase.createEmployee(newEmployee).subscribe((res) => {
             this.updateEmployees();
+            this.clearFields();
           });
         }
       });
@@ -92,5 +93,9 @@ export class EmployeeComponent implements AfterViewInit {
       console.log('Employee removed:', employee.id_usuario);
       this.updateEmployees();
     });
+  }
+
+  clearFields() {
+    this.funcionarioForm.reset();
   }
 }
