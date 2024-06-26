@@ -1,0 +1,15 @@
+<div class="page-container">
+  <div class="header">
+    <p class="page-title">Pedido do dia</p>
+    <p class="subtitle">{{ getFormattedDate() }}</p>
+  </div>
+  <div class="container-opcoes">
+    <p>Opções</p>
+    <h1>temporário</h1>
+    <ul>
+      <li *ngFor="let prato of restaurantMeals">
+        <app-product-card [produto]="prato"></app-product-card>>
+      </li>
+    </ul>
+  </div>
+</div>

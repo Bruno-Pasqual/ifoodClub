@@ -1,0 +1,13 @@
+.page-title {
+  font-size: 2rem;
+}
+
+.container-opcoes {
+  display: flex;
+  flex-direction: column;
+  margin-top: 4rem;
+}
+
+ul {
+  list-style: none;
+}

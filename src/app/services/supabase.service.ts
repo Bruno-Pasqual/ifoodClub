@@ -14,6 +14,10 @@ import { EmployeeDetails } from '../models/EmployeeDetails';
   providedIn: 'root',
 })
 export class SupabaseService {
+  //
+  from(arg0: string) {
+    throw new Error('Method not implemented.');
+  }
   //#region "supa config"
   private supabaseUrl = 'https://krjrlepfeiwkiydkjypo.supabase.co';
   private supabaseKey =
@@ -26,6 +30,21 @@ export class SupabaseService {
   constructor(private auth: AuthService, private router: Router) {
     this.supabase = createClient(this.supabaseUrl, this.supabaseKey);
   }
+
+  //#region Restaurant
+
+  async getAllRestaurants(): Promise<any[]> {
+    let { data, error } = await this.supabase.from('trestaurante').select('*');
+
+    if (error) {
+      console.error('Error fetching restaurants:', error);
+      return []; // Retorna um array vazio em caso de erro
+    }
+
+    return data || []; // Garante que data nunca será null
+  }
+
+  //#endregion
 
   //#region "Funcionários"
 
@@ -140,6 +159,19 @@ export class SupabaseService {
   //#region "Produtos"
 
   //
+
+  async getPratosByID(idRestaurant: number) {
+    let { data, error } = await this.supabase
+      .from('tproduto')
+      .select('*')
+      .eq('id_restaurante', idRestaurant);
+
+    if (error) {
+      this.toaster.error('erro ao buscar pratos');
+    }
+    return data;
+  }
+
   createProduto(produto: Produto): Observable<any> {
     const createUserPromise = this.supabase
       .from(`tproduto`)
@@ -329,9 +361,55 @@ export class SupabaseService {
   }
   //#endregion
 
+  async atualizarRestauranteSelecionado(
+    idEmpresa: number,
+    idRestaurante: number
+  ): Promise<void> {
+    try {
+      console.log('empresa', idEmpresa);
+      console.log('restaurante', idRestaurante);
+
+      const { data, error } = await this.supabase
+        .from('tempresa')
+        .update({ restaurante_selecionado: idRestaurante })
+        .eq('id_empresa', idEmpresa)
+        .select();
+
+      if (error) {
+        throw new Error(`Erro ao atualizar tempresa: ${error.message}`);
+      }
+
+      this.toaster.success('O restaurante selecionado foi atualizado');
+    } catch (error) {
+      console.error('Erro na operação de atualização:');
+      throw error;
+    }
+  }
+
   //#region "Empresa"
 
-  //#endregion
+  async getAllCompanies() {
+    let { data, error } = await this.supabase.from('tempresa').select('*');
+
+    if (error) {
+      this.toaster.error('Algo deu errado ao buscar a empresa');
+      return null;
+    }
+    return data;
+  }
+
+  async getCompanyById(idEmpresa: number) {
+    let { data, error } = await this.supabase
+      .from('tempresa')
+      .select('*')
+      .eq('id_empresa', idEmpresa);
+
+    if (error) {
+      this.toaster.error('algo deu errado ao buscar a empresa');
+      return null;
+    }
+    return data;
+  }
 
   createCompany(
     //Cria um novo usuário especializado
@@ -368,3 +446,4 @@ export class SupabaseService {
     );
   }
 }
+//#endregion

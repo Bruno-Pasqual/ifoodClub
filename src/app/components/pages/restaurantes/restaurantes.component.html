@@ -1,0 +1,23 @@
+<div>
+  <div>
+    <p class="page-title">Restaurantes disponíveis</p>
+  </div>
+  <div class="container-lista">
+    <ul>
+      <li
+        class="restaurant-card-container"
+        *ngFor="let restaurante of arrayRestaurantes"
+        (click)="updateSelectedRestaurant(restaurante.id_restaurante)"
+      >
+        <div class="container-img">
+          <img
+            class="restaurante-img"
+            [src]="restaurante.image"
+            alt="Imagem do restaurante"
+          />
+        </div>
+        <p>{{ restaurante.nome }}</p>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -210,6 +210,39 @@
         <p>Pedidos</p>
       </li>
       <li
+        *ngIf="tipoUsuario == 'funcionario'"
+        class="icon-container"
+        [ngClass]="{ active: currentPage === 'pedidoFuncionario' }"
+        (click)="handleLinkClick('pedidoFuncionario')"
+      >
+        <svg
+          width="30px"
+          height="30px"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          stroke="#000000"
+          stroke-width="0.9600000000000002"
+          class="nav-icon"
+        >
+          <g id="SVGRepo_bgCarrier" stroke-width="0" />
+
+          <g
+            id="SVGRepo_tracerCarrier"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+
+          <g id="SVGRepo_iconCarrier">
+            <rect x="5" y="4" width="14" height="17" rx="2" stroke="#222222" />
+            <path d="M9 9H15" stroke="#222222" stroke-linecap="round" />
+            <path d="M9 13H15" stroke="#222222" stroke-linecap="round" />
+            <path d="M9 17H13" stroke="#222222" stroke-linecap="round" />
+          </g>
+        </svg>
+        <p>Pedidos</p>
+      </li>
+      <li
         *ngIf="tipoUsuario == 'restaurante'"
         class="icon-container"
         [ngClass]="{ active: currentPage === 'pedidos' }"

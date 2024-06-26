@@ -17,6 +17,8 @@ import { EmployeeComponent } from './components/pages/employee/employee.componen
 import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
 import { CrudComponent } from './components/shared/crud/crud.component';
 import { NoEmployeeComponent } from './assets/svg/components/no-employee/no-employee.component';
+import { RestaurantesComponent } from './components/pages/restaurantes/restaurantes.component';
+import { PedidoFuncionarioComponent } from './components/pages/pedido-funcionario/pedido-funcionario.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import { NoEmployeeComponent } from './assets/svg/components/no-employee/no-empl
     EmployeeComponent,
     CrudComponent,
     NoEmployeeComponent,
+    RestaurantesComponent,
+    PedidoFuncionarioComponent,
   ],
   imports: [
     BrowserModule,

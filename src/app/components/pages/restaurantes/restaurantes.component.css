@@ -1,0 +1,33 @@
+.restaurant-card-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: white;
+  box-shadow: 3px 5px 4px rgba(0, 0, 0, 0.075);
+  border-radius: 8px;
+  border: 1px solid rgba(211, 211, 211, 0.329);
+}
+
+.container-img {
+  width: 70px;
+  height: 70px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.restaurant-card-container p {
+  font-size: 1.5rem;
+}
+
+.restaurante-img {
+  width: 100%;
+  height: auto;
+}
+
+.page-title {
+  font-size: 2rem;
+  color: #bb3301;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
