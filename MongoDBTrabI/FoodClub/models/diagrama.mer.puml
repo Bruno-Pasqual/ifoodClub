@@ -1,0 +1,19 @@
+@startuml
+entity "Prato" as prato {
+    + nome: String
+    + preco: Float
+    + descricao: String
+    + id_restaurante: String
+}
+
+entity "Restaurante" as restaurante {
+    + cnpj: String
+    + nome: String
+    + id_usuario: String
+    + cep: String
+    + numero: Integer
+    + local: Point
+}
+
+prato --{ restaurante : "id_restaurante" -> "_id"
+@enduml

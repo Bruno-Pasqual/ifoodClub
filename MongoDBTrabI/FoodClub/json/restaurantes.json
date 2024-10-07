@@ -1,0 +1,822 @@
+[
+    {
+        "endereco": {
+            "status_restaurante": 1,
+            "restaurante_id": "1",
+            "nome": "Restaurante Sabores do Brasil",
+            "logradouro": "Av. Dom Aguirre",
+            "numero": "1234",
+            "bairro": "Centro",
+            "cep": "18040-000",
+            "local": {
+                "type": "Point",
+                "coordinates": [-47.523123, -23.501234]
+            },
+            "cozinha": "Brasileira",
+            "pratos": {
+                "entrada": [
+                    {
+                        "pratoStatus": 1,
+                        "pratoId": "1_entrada1",
+                        "pratoNome": "Salada de Palmito",
+                        "pratoPreco": 12.00,
+                        "pratoDescricao": "Salada fresca com palmito e ervas."
+                    },
+                    {
+                        "pratoStatus": 1,
+                        "pratoId": "1_entrada2",
+                        "pratoNome": "Coxinha",
+                        "pratoPreco": 10.00,
+                        "pratoDescricao": "Coxinha recheada com frango."
+                    },
+                    {
+                        "pratoStatus": 1,
+                        "pratoId": "1_entrada3",
+                        "pratoNome": "Bolinho de Feijoada",
+                        "pratoPreco": 15.00,
+                        "pratoDescricao": "Bolinho frito feito com feijoada."
+                    }
+                ],
+                "principal": [
+                    {
+                        "pratoStatus": 1,
+                        "pratoId": "1_principal1",
+                        "pratoNome": "Feijoada",
+                        "pratoPreco": 30.00,
+                        "pratoDescricao": "Feijoada tradicional com acompanhamentos."
+                    },
+                    {
+                        "pratoStatus": 1,
+                        "pratoId": "1_principal2",
+                        "pratoNome": "Moqueca",
+                        "pratoPreco": 40.00,
+                        "pratoDescricao": "Moqueca de peixe com camarão."
+                    },
+                    {
+                        "pratoStatus": 1,
+                        "pratoId": "1_principal3",
+                        "pratoNome": "Picanha",
+                        "pratoPreco": 45.00,
+                        "pratoDescricao": "Picanha grelhada com farofa."
+                    }
+                ],
+                "sobremesa": [
+                    {
+                        "pratoStatus": 1,
+                        "pratoId": "1_sobremesa1",
+                        "pratoNome": "Pudim",
+                        "pratoPreco": 8.00,
+                        "pratoDescricao": "Pudim de leite condensado."
+                    },
+                    {
+                        "pratoStatus": 1,
+                        "pratoId": "1_sobremesa2",
+                        "pratoNome": "Torta de Limão",
+                        "pratoPreco": 12.00,
+                        "pratoDescricao": "Torta de limão com merengue."
+                    },
+                    {
+                        "pratoStatus": 1,
+                        "pratoId": "1_sobremesa3",
+                        "pratoNome": "Brigadeiro",
+                        "pratoPreco": 6.00,
+                        "pratoDescricao": "Doce de chocolate tradicional."
+                    }
+                ]
+            },
+            "bebidas": {
+                "quente": [
+                    {
+                        "bebidaStatus": 1,
+                        "bebidaId": "1_bebida_quente1",
+                        "bebidaNome": "Café",
+                        "bebidaPreco": 5.00,
+                        "bebidaDescricao": "Café coado."
+                    },
+                    {
+                        "bebidaStatus": 1,
+                        "bebidaId": "1_bebida_quente2",
+                        "bebidaNome": "Chá",
+                        "bebidaPreco": 4.00,
+                        "bebidaDescricao": "Chá de ervas."
+                    },
+                    {
+                        "bebidaStatus": 1,
+                        "bebidaId": "1_bebida_quente3",
+                        "bebidaNome": "Chocolate Quente",
+                        "bebidaPreco": 10.00,
+                        "bebidaDescricao": "Chocolate quente cremoso."
+                    }
+                ],
+                "fria": [
+                    {
+                        "bebidaStatus": 1,
+                        "bebidaId": "1_bebida_fria1",
+                        "bebidaNome": "Suco de Laranja",
+                        "bebidaPreco": 8.00,
+                        "bebidaDescricao": "Suco natural de laranja."
+                    },
+                    {
+                        "bebidaStatus": 1,
+                        "bebidaId": "1_bebida_fria2",
+                        "bebidaNome": "Refrigerante",
+                        "bebidaPreco": 6.00,
+                        "bebidaDescricao": "Refrigerante da sua escolha."
+                    },
+                    {
+                        "bebidaStatus": 1,
+                        "bebidaId": "1_bebida_fria3",
+                        "bebidaNome": "Água Mineral",
+                        "bebidaPreco": 3.00,
+                        "bebidaDescricao": "Água mineral com gás."
+                    }
+                ]
+            },
+            "avaliacoe": [
+                {
+                    "data": {
+                        "formatoUnix": 1672500000000
+                    },
+                    "nota": "A",
+                    "pontos": 5
+                }
+            ]
+        }
+    },
+    {
+        "endereco": {
+            "status_restaurante": 1,
+            "restaurante_id": "2",
+            "nome": "Hamburgueria Gourmet",
+            "logradouro": "Avenida Dom Aguirre",
+            "numero": "456",
+            "bairro": "Jardim América",
+            "cep": "18040-000",
+            "local": {
+                "type": "Point",
+                "coordinates": [-47.523123, -23.500000]
+            },
+            "cozinha": "Americana",
+            "pratos": {
+                "entrada": [
+                    {
+                        "pratoStatus": 1,
+                        "pratoId": "2_entrada1",
+                        "pratoNome": "Batata Frita",
+                        "pratoPreco": 12.00,
+                        "pratoDescricao": "Batata frita crocante."
+                    },
+                    {
+                        "pratoStatus": 1,
+                        "pratoId": "2_entrada2",
+                        "pratoNome": "Onion Rings",
+                        "pratoPreco": 15.00,
+                        "pratoDescricao": "Anéis de cebola empanados."
+                    },
+                    {
+                        "pratoStatus": 1,
+                        "pratoId": "2_entrada3",
+                        "pratoNome": "Nuggets de Frango",
+                        "pratoPreco": 18.00,
+                        "pratoDescricao": "Nuggets crocantes de frango."
+                    }
+                ],
+                "principal": [
+                    {
+                        "pratoStatus": 1,
+                        "pratoId": "2_principal1",
+                        "pratoNome": "Hambúrguer Artesanal",
+                        "pratoPreco": 25.00,
+                        "pratoDescricao": "Hambúrguer com queijo e bacon."
+                    },
+                    {
+                        "pratoStatus": 1,
+                        "pratoId": "2_principal2",
+                        "pratoNome": "Cheeseburguer",
+                        "pratoPreco": 27.00,
+                        "pratoDescricao": "Cheeseburguer com cheddar."
+                    },
+                    {
+                        "pratoStatus": 1,
+                        "pratoId": "2_principal3",
+                        "pratoNome": "Veggie Burger",
+                        "pratoPreco": 22.00,
+                        "pratoDescricao": "Hambúrguer vegetariano."
+                    }
+                ],
+                "sobremesa": [
+                    {
+                        "pratoStatus": 1,
+                        "pratoId": "2_sobremesa1",
+                        "pratoNome": "Brownie",
+                        "pratoPreco": 10.00,
+                        "pratoDescricao": "Brownie de chocolate com nozes."
+                    },
+                    {
+                        "pratoStatus": 1,
+                        "pratoId": "2_sobremesa2",
+                        "pratoNome": "Cheesecake",
+                        "pratoPreco": 12.00,
+                        "pratoDescricao": "Cheesecake de frutas vermelhas."
+                    },
+                    {
+                        "pratoStatus": 1,
+                        "pratoId": "2_sobremesa3",
+                        "pratoNome": "Sorvete",
+                        "pratoPreco": 8.00,
+                        "pratoDescricao": "Sorvete de baunilha."
+                    }
+                ]
+            },
+            "bebidas": {
+                "quente": [
+                    {
+                        "bebidaStatus": 1,
+                        "bebidaId": "2_bebida_quente1",
+                        "bebidaNome": "Café",
+                        "bebidaPreco": 5.00,
+                        "bebidaDescricao": "Café coado."
+                    },
+                    {
+                        "bebidaStatus": 1,
+                        "bebidaId": "2_bebida_quente2",
+                        "bebidaNome": "Chá",
+                        "bebidaPreco": 4.00,
+                        "bebidaDescricao": "Chá de frutas."
+                    },
+                    {
+                        "bebidaStatus": 1,
+                        "bebidaId": "2_bebida_quente3",
+                        "bebidaNome": "Chá Gelado",
+                        "bebidaPreco": 6.00,
+                        "bebidaDescricao": "Chá gelado refrescante."
+                    }
+                ],
+                "fria": [
+                    {
+                        "bebidaStatus": 1,
+                        "bebidaId": "2_bebida_fria1",
+                        "bebidaNome": "Refrigerante",
+                        "bebidaPreco": 6.00,
+                        "bebidaDescricao": "Refrigerante da sua escolha."
+                    },
+                    {
+                        "bebidaStatus": 1,
+                        "bebidaId": "2_bebida_fria2",
+                        "bebidaNome": "Suco Natural",
+                        "bebidaPreco": 8.00,
+                        "bebidaDescricao": "Suco natural de abacaxi."
+                    },
+                    {
+                        "bebidaStatus": 1,
+                        "bebidaId": "2_bebida_fria3",
+                        "bebidaNome": "Água com Gás",
+                        "bebidaPreco": 4.00,
+                        "bebidaDescricao": "Água mineral com gás."
+                    }
+                ]
+            },
+            "avaliacoe": [
+                {
+                    "data": {
+                        "formatoUnix": 1672500000000
+                    },
+                    "nota": "A",
+                    "pontos": 5
+                }
+            ]
+        }
+    },
+    {
+        "endereco": {
+            "status_restaurante": 1,
+            "restaurante_id": "3",
+            "nome": "Café da Tarde",
+            "logradouro": "Rua da Alegria",
+            "numero": "321",
+            "bairro": "Centro",
+            "cep": "18040-000",
+            "local": {
+                "type": "Point",
+                "coordinates": [-47.525000, -23.500000]
+            },
+            "cozinha": "Cafeteria",
+            "pratos": {
+                "entrada": [],
+                "principal": [],
+                "sobremesa": [
+                    {
+                        "pratoStatus": 1,
+                        "pratoId": "3_sobremesa1",
+                        "pratoNome": "Torta de Maçã",
+                        "pratoPreco": 10.00,
+                        "pratoDescricao": "Torta de maçã com canela."
+                    },
+                    {
+                        "pratoStatus": 1,
+                        "pratoId": "3_sobremesa2",
+                        "pratoNome": "Bolo de Cenoura",
+                        "pratoPreco": 8.00,
+                        "pratoDescricao": "Bolo de cenoura com cobertura de chocolate."
+                    },
+                    {
+                        "pratoStatus": 1,
+                        "pratoId": "3_sobremesa3",
+                        "pratoNome": "Pavê de Chocolate",
+                        "pratoPreco": 12.00,
+                        "pratoDescricao": "Pavê de chocolate com biscoitos."
+                    }
+                ]
+            },
+            "bebidas": {
+                "quente": [
+                    {
+                        "bebidaStatus": 1,
+                        "bebidaId": "3_bebida_quente1",
+                        "bebidaNome": "Café Expresso",
+                        "bebidaPreco": 6.00,
+                        "bebidaDescricao": "Café expresso forte."
+                    },
+                    {
+                        "bebidaStatus": 1,
+                        "bebidaId": "3_bebida_quente2",
+                        "bebidaNome": "Capuccino",
+                        "bebidaPreco": 10.00,
+                        "bebidaDescricao": "Capuccino cremoso."
+                    },
+                    {
+                        "bebidaStatus": 1,
+                        "bebidaId": "3_bebida_quente3",
+                        "bebidaNome": "Chá de Ervas",
+                        "bebidaPreco": 5.00,
+                        "bebidaDescricao": "Chá de ervas aromáticas."
+                    }
+                ],
+                "fria": [
+                    {
+                        "bebidaStatus": 1,
+                        "bebidaId": "3_bebida_fria1",
+                        "bebidaNome": "Suco de Limão",
+                        "bebidaPreco": 8.00,
+                        "bebidaDescricao": "Suco natural de limão."
+                    },
+                    {
+                        "bebidaStatus": 1,
+                        "bebidaId": "3_bebida_fria2",
+                        "bebidaNome": "Água Mineral",
+                        "bebidaPreco": 3.00,
+                        "bebidaDescricao": "Água mineral sem gás."
+                    },
+                    {
+                        "bebidaStatus": 1,
+                        "bebidaId": "3_bebida_fria3",
+                        "bebidaNome": "Refrigerante de Guaraná",
+                        "bebidaPreco": 5.00,
+                        "bebidaDescricao": "Refrigerante de guaraná."
+                    }
+                ]
+            },
+            "avaliacoe": [
+                {
+                    "data": {
+                        "formatoUnix": 1672500000000
+                    },
+                    "nota": "A",
+                    "pontos": 5
+                }
+            ]
+        }
+    },
+    {
+        "endereco": {
+            "status_restaurante": 1,
+            "restaurante_id": "4",
+            "nome": "Cantina Italiana",
+            "logradouro": "Rua da Itália",
+            "numero": "456",
+            "bairro": "Jardim Itália",
+            "cep": "18040-000",
+            "local": {
+                "type": "Point",
+                "coordinates": [-47.520000, -23.500000]
+            },
+            "cozinha": "Italiana",
+            "pratos": {
+                "entrada": [
+                    {
+                        "pratoStatus": 1,
+                        "pratoId": "4_entrada1",
+                        "pratoNome": "Bruschetta",
+                        "pratoPreco": 10.00,
+                        "pratoDescricao": "Pão italiano com tomate e manjericão."
+                    },
+                    {
+                        "pratoStatus": 1,
+                        "pratoId": "4_entrada2",
+                        "pratoNome": "Carpaccio",
+                        "pratoPreco": 15.00,
+                        "pratoDescricao": "Carpaccio de carne com molho de mostarda."
+                    },
+                    {
+                        "pratoStatus": 1,
+                        "pratoId": "4_entrada3",
+                        "pratoNome": "Salada Caprese",
+                        "pratoPreco": 12.00,
+                        "pratoDescricao": "Salada de tomate, mussarela e manjericão."
+                    }
+                ],
+                "principal": [
+                    {
+                        "pratoStatus": 1,
+                        "pratoId": "4_principal1",
+                        "pratoNome": "Spaghetti à Bolonhesa",
+                        "pratoPreco": 28.00,
+                        "pratoDescricao": "Espaguete com molho bolonhesa."
+                    },
+                    {
+                        "pratoStatus": 1,
+                        "pratoId": "4_principal2",
+                        "pratoNome": "Lasagna",
+                        "pratoPreco": 35.00,
+                        "pratoDescricao": "Lasanha recheada com carne e queijo."
+                    },
+                    {
+                        "pratoStatus": 1,
+                        "pratoId": "4_principal3",
+                        "pratoNome": "Risoto de Funghi",
+                        "pratoPreco": 40.00,
+                        "pratoDescricao": "Risoto cremoso com cogumelos."
+                    }
+                ],
+                "sobremesa": [
+                    {
+                        "pratoStatus": 1,
+                        "pratoId": "4_sobremesa1",
+                        "pratoNome": "Tiramisu",
+                        "pratoPreco": 15.00,
+                        "pratoDescricao": "Sobremesa clássica italiana."
+                    },
+                    {
+                        "pratoStatus": 1,
+                        "pratoId": "4_sobremesa2",
+                        "pratoNome": "Panna Cotta",
+                        "pratoPreco": 12.00,
+                        "pratoDescricao": "Panna cotta com calda de frutas."
+                    },
+                    {
+                        "pratoStatus": 1,
+                        "pratoId": "4_sobremesa3",
+                        "pratoNome": "Gelato",
+                        "pratoPreco": 10.00,
+                        "pratoDescricao": "Gelato de baunilha."
+                    }
+                ]
+            },
+            "bebidas": {
+                "quente": [
+                    {
+                        "bebidaStatus": 1,
+                        "bebidaId": "4_bebida_quente1",
+                        "bebidaNome": "Café Italiano",
+                        "bebidaPreco": 5.00,
+                        "bebidaDescricao": "Café italiano forte."
+                    },
+                    {
+                        "bebidaStatus": 1,
+                        "bebidaId": "4_bebida_quente2",
+                        "bebidaNome": "Capuccino",
+                        "bebidaPreco": 10.00,
+                        "bebidaDescricao": "Capuccino com espuma."
+                    },
+                    {
+                        "bebidaStatus": 1,
+                        "bebidaId": "4_bebida_quente3",
+                        "bebidaNome": "Café com Leite",
+                        "bebidaPreco": 7.00,
+                        "bebidaDescricao": "Café com leite cremoso."
+                    }
+                ],
+                "fria": [
+                    {
+                        "bebidaStatus": 1,
+                        "bebidaId": "4_bebida_fria1",
+                        "bebidaNome": "Vinho Tinto",
+                        "bebidaPreco": 50.00,
+                        "bebidaDescricao": "Vinho tinto da casa."
+                    },
+                    {
+                        "bebidaStatus": 1,
+                        "bebidaId": "4_bebida_fria2",
+                        "bebidaNome": "Água com Gás",
+                        "bebidaPreco": 4.00,
+                        "bebidaDescricao": "Água mineral com gás."
+                    },
+                    {
+                        "bebidaStatus": 1,
+                        "bebidaId": "4_bebida_fria3",
+                        "bebidaNome": "Suco de Uva",
+                        "bebidaPreco": 10.00,
+                        "bebidaDescricao": "Suco de uva natural."
+                    }
+                ]
+            },
+            "avaliacoe": [
+                {
+                    "data": {
+                        "formatoUnix": 1672500000000
+                    },
+                    "nota": "A",
+                    "pontos": 5
+                }
+            ]
+        }
+    },
+    {
+        "endereco": {
+            "status_restaurante": 1,
+            "restaurante_id": "5",
+            "nome": "Pizzaria Margherita",
+            "logradouro": "Rua da Pizza",
+            "numero": "789",
+            "bairro": "Centro",
+            "cep": "18040-000",
+            "local": {
+                "type": "Point",
+                "coordinates": [-47.521000, -23.500500]
+            },
+            "cozinha": "Italiana",
+            "pratos": {
+                "entrada": [
+                    {
+                        "pratoStatus": 1,
+                        "pratoId": "5_entrada1",
+                        "pratoNome": "Bruschetta",
+                        "pratoPreco": 10.00,
+                        "pratoDescricao": "Pão italiano com tomate e manjericão."
+                    },
+                    {
+                        "pratoStatus": 1,
+                        "pratoId": "5_entrada2",
+                        "pratoNome": "Focaccia",
+                        "pratoPreco": 15.00,
+                        "pratoDescricao": "Focaccia com alecrim."
+                    },
+                    {
+                        "pratoStatus": 1,
+                        "pratoId": "5_entrada3",
+                        "pratoNome": "Salada Caesar",
+                        "pratoPreco": 12.00,
+                        "pratoDescricao": "Salada Caesar com molho especial."
+                    }
+                ],
+                "principal": [
+                    {
+                        "pratoStatus": 1,
+                        "pratoId": "5_principal1",
+                        "pratoNome": "Pizza Margherita",
+                        "pratoPreco": 30.00,
+                        "pratoDescricao": "Pizza clássica com tomate e mozzarella."
+                    },
+                    {
+                        "pratoStatus": 1,
+                        "pratoId": "5_principal2",
+                        "pratoNome": "Pizza Pepperoni",
+                        "pratoPreco": 35.00,
+                        "pratoDescricao": "Pizza com pepperoni e queijo."
+                    },
+                    {
+                        "pratoStatus": 1,
+                        "pratoId": "5_principal3",
+                        "pratoNome": "Pizza Vegetariana",
+                        "pratoPreco": 32.00,
+                        "pratoDescricao": "Pizza com vegetais grelhados."
+                    }
+                ],
+                "sobremesa": [
+                    {
+                        "pratoStatus": 1,
+                        "pratoId": "5_sobremesa1",
+                        "pratoNome": "Tiramisu",
+                        "pratoPreco": 15.00,
+                        "pratoDescricao": "Sobremesa clássica italiana."
+                    },
+                    {
+                        "pratoStatus": 1,
+                        "pratoId": "5_sobremesa2",
+                        "pratoNome": "Gelato",
+                        "pratoPreco": 10.00,
+                        "pratoDescricao": "Gelato de diversos sabores."
+                    },
+                    {
+                        "pratoStatus": 1,
+                        "pratoId": "5_sobremesa3",
+                        "pratoNome": "Panna Cotta",
+                        "pratoPreco": 12.00,
+                        "pratoDescricao": "Panna cotta com frutas vermelhas."
+                    }
+                ]
+            },
+            "bebidas": {
+                "quente": [
+                    {
+                        "bebidaStatus": 1,
+                        "bebidaId": "5_bebida_quente1",
+                        "bebidaNome": "Café",
+                        "bebidaPreco": 5.00,
+                        "bebidaDescricao": "Café coado."
+                    },
+                    {
+                        "bebidaStatus": 1,
+                        "bebidaId": "5_bebida_quente2",
+                        "bebidaNome": "Chá",
+                        "bebidaPreco": 4.00,
+                        "bebidaDescricao": "Chá de frutas."
+                    },
+                    {
+                        "bebidaStatus": 1,
+                        "bebidaId": "5_bebida_quente3",
+                        "bebidaNome": "Capuccino",
+                        "bebidaPreco": 10.00,
+                        "bebidaDescricao": "Capuccino cremoso."
+                    }
+                ],
+                "fria": [
+                    {
+                        "bebidaStatus": 1,
+                        "bebidaId": "5_bebida_fria1",
+                        "bebidaNome": "Suco de Laranja",
+                        "bebidaPreco": 8.00,
+                        "bebidaDescricao": "Suco natural de laranja."
+                    },
+                    {
+                        "bebidaStatus": 1,
+                        "bebidaId": "5_bebida_fria2",
+                        "bebidaNome": "Refrigerante",
+                        "bebidaPreco": 6.00,
+                        "bebidaDescricao": "Refrigerante da sua escolha."
+                    },
+                    {
+                        "bebidaStatus": 1,
+                        "bebidaId": "5_bebida_fria3",
+                        "bebidaNome": "Água Mineral",
+                        "bebidaPreco": 3.00,
+                        "bebidaDescricao": "Água mineral sem gás."
+                    }
+                ]
+            },
+            "avaliacoe": [
+                {
+                    "data": {
+                        "formatoUnix": 1672500000000
+                    },
+                    "nota": "A",
+                    "pontos": 5
+                }
+            ]
+        }
+    },
+    {
+        "endereco": {
+            "status_restaurante": 1,
+            "restaurante_id": "6",
+            "nome": "Churrascaria do Gaúcho",
+            "logradouro": "Rua do Churrasco",
+            "numero": "123",
+            "bairro": "Bairro do Churrasco",
+            "cep": "18040-000",
+            "local": {
+                "type": "Point",
+                "coordinates": [-47.520000, -23.502000]
+            },
+            "cozinha": "Gaucha",
+            "pratos": {
+                "entrada": [
+                    {
+                        "pratoStatus": 1,
+                        "pratoId": "6_entrada1",
+                        "pratoNome": "Pão de Alho",
+                        "pratoPreco": 10.00,
+                        "pratoDescricao": "Pão de alho assado."
+                    },
+                    {
+                        "pratoStatus": 1,
+                        "pratoId": "6_entrada2",
+                        "pratoNome": "Linguiça",
+                        "pratoPreco": 15.00,
+                        "pratoDescricao": "Linguiça na brasa."
+                    },
+                    {
+                        "pratoStatus": 1,
+                        "pratoId": "6_entrada3",
+                        "pratoNome": "Salada de Grão-de-bico",
+                        "pratoPreco": 12.00,
+                        "pratoDescricao": "Salada fresca de grão-de-bico."
+                    }
+                ],
+                "principal": [
+                    {
+                        "pratoStatus": 1,
+                        "pratoId": "6_principal1",
+                        "pratoNome": "Picanha",
+                        "pratoPreco": 45.00,
+                        "pratoDescricao": "Picanha na brasa."
+                    },
+                    {
+                        "pratoStatus": 1,
+                        "pratoId": "6_principal2",
+                        "pratoNome": "Costela",
+                        "pratoPreco": 50.00,
+                        "pratoDescricao": "Costela assada lentamente."
+                    },
+                    {
+                        "pratoStatus": 1,
+                        "pratoId": "6_principal3",
+                        "pratoNome": "Fraldinha",
+                        "pratoPreco": 40.00,
+                        "pratoDescricao": "Fraldinha grelhada."
+                    }
+                ],
+                "sobremesa": [
+                    {
+                        "pratoStatus": 1,
+                        "pratoId": "6_sobremesa1",
+                        "pratoNome": "Pudim",
+                        "pratoPreco": 8.00,
+                        "pratoDescricao": "Pudim de leite condensado."
+                    },
+                    {
+                        "pratoStatus": 1,
+                        "pratoId": "6_sobremesa2",
+                        "pratoNome": "Mousse de Maracujá",
+                        "pratoPreco": 10.00,
+                        "pratoDescricao": "Mousse de maracujá."
+                    },
+                    {
+                        "pratoStatus": 1,
+                        "pratoId": "6_sobremesa3",
+                        "pratoNome": "Bolo de Cenoura",
+                        "pratoPreco": 9.00,
+                        "pratoDescricao": "Bolo de cenoura com cobertura de chocolate."
+                    }
+                ]
+            },
+            "bebidas": {
+                "quente": [
+                    {
+                        "bebidaStatus": 1,
+                        "bebidaId": "6_bebida_quente1",
+                        "bebidaNome": "Café",
+                        "bebidaPreco": 5.00,
+                        "bebidaDescricao": "Café coado."
+                    },
+                    {
+                        "bebidaStatus": 1,
+                        "bebidaId": "6_bebida_quente2",
+                        "bebidaPreco": 4.00,
+                        "bebidaNome": "Chá",
+                        "bebidaDescricao": "Chá de frutas."
+                    },
+                    {
+                        "bebidaStatus": 1,
+                        "bebidaId": "6_bebida_quente3",
+                        "bebidaNome": "Chá Gelado",
+                        "bebidaPreco": 6.00,
+                        "bebidaDescricao": "Chá gelado refrescante."
+                    }
+                ],
+                "fria": [
+                    {
+                        "bebidaStatus": 1,
+                        "bebidaId": "6_bebida_fria1",
+                        "bebidaNome": "Refrigerante",
+                        "bebidaPreco": 6.00,
+                        "bebidaDescricao": "Refrigerante da sua escolha."
+                    },
+                    {
+                        "bebidaStatus": 1,
+                        "bebidaId": "6_bebida_fria2",
+                        "bebidaPreco": 8.00,
+                        "bebidaNome": "Suco Natural",
+                        "bebidaDescricao": "Suco natural de abacaxi."
+                    },
+                    {
+                        "bebidaStatus": 1,
+                        "bebidaId": "6_bebida_fria3",
+                        "bebidaNome": "Água com Gás",
+                        "bebidaPreco": 4.00,
+                        "bebidaDescricao": "Água mineral com gás."
+                    }
+                ]
+            },
+            "avaliacoe": [
+                {
+                    "data": {
+                        "formatoUnix": 1672500000000
+                    },
+                    "nota": "A",
+                    "pontos": 5
+                }
+            ]
+        }
+    }
+]
